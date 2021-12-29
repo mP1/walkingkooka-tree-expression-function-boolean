@@ -48,7 +48,7 @@ abstract class BooleanExpressionFunction<C extends ExpressionFunctionContext> im
 
     @Override
     public final boolean lsLastParameterVariable() {
-        return false;
+        return this instanceof BooleanExpressionFunctionLogical;
     }
 
     @Override
