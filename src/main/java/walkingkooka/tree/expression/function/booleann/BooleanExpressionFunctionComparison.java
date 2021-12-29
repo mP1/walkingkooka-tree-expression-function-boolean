@@ -111,9 +111,4 @@ final class BooleanExpressionFunctionComparison<C extends ExpressionFunctionCont
             .setType(Comparable.class);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(FIRST, SECOND);
-
-    @Override
-    public boolean lsLastParameterVariable() {
-        return false;
-    }
 }

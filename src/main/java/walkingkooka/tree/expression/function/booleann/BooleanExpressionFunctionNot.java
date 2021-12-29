@@ -75,9 +75,4 @@ final class BooleanExpressionFunctionNot<C extends ExpressionFunctionContext> ex
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             PARAMETER
     );
-
-    @Override
-    public boolean lsLastParameterVariable() {
-        return false;
-    }
 }

@@ -77,9 +77,4 @@ final class BooleanExpressionFunctionTo<C extends ExpressionFunctionContext> ext
             .setType(Object.class);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = Lists.of(PARAMETER);
-
-    @Override
-    public boolean lsLastParameterVariable() {
-        return false;
-    }
 }
