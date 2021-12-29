@@ -23,7 +23,7 @@ import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public final class BooleanExpressionFunctionComparisonTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionComparison<ExpressionFunctionContext>, Boolean> {
+public final class BooleanExpressionFunctionComparisonTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionComparison<ExpressionFunctionContext>> {
 
     @Test
     public void testZeroParametersFails() {
