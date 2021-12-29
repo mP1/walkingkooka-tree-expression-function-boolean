@@ -18,36 +18,34 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
-import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.ExpressionPurityContext;
 import walkingkooka.tree.expression.FunctionExpressionName;
-import walkingkooka.tree.expression.function.ExpressionFunction;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
+import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
 import java.util.List;
 
 /**
- * A function that always returns false
+ * A function that inverts the a boolean value.
  */
-final class FalseExpressionFunction<C extends ExpressionFunctionContext> implements ExpressionFunction<Boolean, C> {
+final class BooleanExpressionFunctionNot<C extends ExpressionFunctionContext> extends BooleanExpressionFunction<C> {
 
     /**
      * Instance getter.
      */
-    static <C extends ExpressionFunctionContext> FalseExpressionFunction<C> instance() {
+    static <C extends ExpressionFunctionContext> BooleanExpressionFunctionNot<C> instance() {
         return Cast.to(INSTANCE);
     }
 
     /**
      * Singleton
      */
-    private static final FalseExpressionFunction INSTANCE = new FalseExpressionFunction();
+    private static final BooleanExpressionFunctionNot INSTANCE = new BooleanExpressionFunctionNot();
 
     /**
      * Private ctor
      */
-    private FalseExpressionFunction() {
+    private BooleanExpressionFunctionNot() {
         super();
     }
 
@@ -55,7 +53,8 @@ final class FalseExpressionFunction<C extends ExpressionFunctionContext> impleme
     public Boolean apply(final List<Object> parameters,
                          final C context) {
         this.checkOnlyRequiredParameters(parameters);
-        return Boolean.FALSE;
+
+        return !PARAMETER.getOrFail(parameters, 0);
     }
 
     @Override
@@ -63,35 +62,22 @@ final class FalseExpressionFunction<C extends ExpressionFunctionContext> impleme
         return NAME;
     }
 
-    private final static FunctionExpressionName NAME = FunctionExpressionName.with("false");
+    private final static FunctionExpressionName NAME = FunctionExpressionName.with("not");
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters() {
-        return Lists.empty();
+        return PARAMETERS;
     }
+
+    private final static ExpressionFunctionParameter<Boolean> PARAMETER = ExpressionFunctionParameterName.with("parameter")
+            .setType(Boolean.class);
+
+    private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
+            PARAMETER
+    );
 
     @Override
     public boolean lsLastParameterVariable() {
         return false;
-    }
-
-    @Override
-    public Class<Boolean> returnType() {
-        return Boolean.class;
-    }
-
-    @Override
-    public boolean resolveReferences() {
-        return true;
-    }
-
-    @Override
-    public boolean isPure(final ExpressionPurityContext context) {
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return this.name().toString();
     }
 }

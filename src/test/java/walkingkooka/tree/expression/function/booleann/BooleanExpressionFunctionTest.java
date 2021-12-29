@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Miroslav Pokorny (github.com/mP1)
+ * Copyright 2020 Miroslav Pokorny (github.com/mP1)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,66 +17,18 @@
 
 package walkingkooka.tree.expression.function.booleann;
 
-import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.reflect.ClassTesting;
+import walkingkooka.reflect.JavaVisibility;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
-public final class BooleanExpressionFunctionTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunction<ExpressionFunctionContext>, Boolean> {
-
-    @Test
-    public void testZeroParametersFails() {
-        assertThrows(IllegalArgumentException.class, this::apply2);
-    }
-
-    @Test
-    public void testTwoParametersFails() {
-        assertThrows(IllegalArgumentException.class, () -> this.apply2("a1", "b2"));
-    }
-
-    @Test
-    public void testEmptyString() {
-        this.applyAndCheck2(parameters(""), false);
-    }
-
-    @Test
-    public void testStringTrue() {
-        this.applyAndCheck2(parameters("true"), true);
-    }
-
-    @Test
-    public void testStringFalse() {
-        this.applyAndCheck2(parameters("false"), false);
-    }
-
-    @Test
-    public void testBooleanTrue() {
-        this.applyAndCheck2(parameters(true), true);
-    }
-
-    @Test
-    public void testBooleanFalse() {
-        this.applyAndCheck2(parameters(false), false);
-    }
-
-    @Test
-    public void testResolveReferencesFalse() {
-        this.resolveReferenceAndCheck(true);
-    }
-
-    @Test
-    public void testToString() {
-        this.toStringAndCheck(this.createBiFunction(), "boolean");
+public final class BooleanExpressionFunctionTest implements ClassTesting<BooleanExpressionFunction<?>> {
+    @Override
+    public JavaVisibility typeVisibility() {
+        return JavaVisibility.PACKAGE_PRIVATE;
     }
 
     @Override
-    public BooleanExpressionFunction<ExpressionFunctionContext> createBiFunction() {
-        return BooleanExpressionFunction.instance();
-    }
-
-    @Override
-    public Class<BooleanExpressionFunction<ExpressionFunctionContext>> type() {
+    public Class<BooleanExpressionFunction<?>> type() {
         return Cast.to(BooleanExpressionFunction.class);
     }
 }
