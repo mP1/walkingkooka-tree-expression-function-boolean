@@ -82,7 +82,7 @@ final class TrueExpressionFunction<C extends ExpressionFunctionContext> implemen
 
     @Override
     public boolean resolveReferences() {
-        return false;
+        return true;
     }
 
     @Override

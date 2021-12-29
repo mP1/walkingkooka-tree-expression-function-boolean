@@ -126,7 +126,7 @@ final class ComparisonExpressionFunction<C extends ExpressionFunctionContext> im
 
     @Override
     public boolean resolveReferences() {
-        return false;
+        return true;
     }
 
     @Override

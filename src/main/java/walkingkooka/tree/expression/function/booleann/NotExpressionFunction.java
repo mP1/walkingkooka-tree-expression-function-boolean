@@ -90,7 +90,7 @@ final class NotExpressionFunction<C extends ExpressionFunctionContext> implement
 
     @Override
     public boolean resolveReferences() {
-        return false;
+        return true;
     }
 
     @Override

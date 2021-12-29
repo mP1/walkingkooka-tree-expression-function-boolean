@@ -100,7 +100,7 @@ final class IfExpressionFunction<C extends ExpressionFunctionContext> implements
 
     @Override
     public boolean resolveReferences() {
-        return false;
+        return true;
     }
 
     @Override

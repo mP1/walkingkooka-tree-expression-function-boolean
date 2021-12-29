@@ -92,7 +92,7 @@ final class BooleanExpressionFunction<C extends ExpressionFunctionContext> imple
 
     @Override
     public boolean resolveReferences() {
-        return false;
+        return true;
     }
 
     @Override

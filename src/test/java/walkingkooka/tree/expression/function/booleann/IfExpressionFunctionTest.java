@@ -52,7 +52,7 @@ public final class IfExpressionFunctionTest extends BooleanExpressionFunctionTes
 
     @Test
     public void testResolveReferencesFalse() {
-        this.resolveReferenceAndCheck(false);
+        this.resolveReferenceAndCheck(true);
     }
 
     @Test

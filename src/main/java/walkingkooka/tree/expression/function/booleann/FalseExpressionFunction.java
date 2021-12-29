@@ -82,7 +82,7 @@ final class FalseExpressionFunction<C extends ExpressionFunctionContext> impleme
 
     @Override
     public boolean resolveReferences() {
-        return false;
+        return true;
     }
 
     @Override
