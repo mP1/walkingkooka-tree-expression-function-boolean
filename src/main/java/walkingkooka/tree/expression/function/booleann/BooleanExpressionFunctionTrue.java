@@ -67,9 +67,4 @@ final class BooleanExpressionFunctionTrue<C extends ExpressionFunctionContext> e
     public List<ExpressionFunctionParameter<?>> parameters() {
         return Lists.empty();
     }
-
-    @Override
-    public boolean lsLastParameterVariable() {
-        return false;
-    }
 }
