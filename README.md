@@ -9,3 +9,23 @@
 
 # walkingkooka-tree-expression-function-boolean
 A collection of ExpressionFunction(s) that operate and return boolean results. Many of the functions follow Excel semantics.
+
+
+
+## Available functions
+
+- boolean
+- equals
+- false
+- greaterThan
+- greaterThanEquals
+- if
+- lessThan
+- lessThanEquals
+- not
+- notEquals
+- true
+
+
+
+Many more functions are outstanding and remain TODO.
