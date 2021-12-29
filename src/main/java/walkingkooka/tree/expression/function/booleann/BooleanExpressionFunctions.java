@@ -34,6 +34,7 @@ public final class BooleanExpressionFunctions implements PublicStaticHelper {
      */
     public static void visit(final Consumer<ExpressionFunction<?, ?>> consumer) {
         Lists.of(
+                and(),
                 booleanFunction(),
                 equals(),
                 falseFunction(),
@@ -46,6 +47,13 @@ public final class BooleanExpressionFunctions implements PublicStaticHelper {
                 notEquals(),
                 trueFunction()
         ).forEach(consumer);
+    }
+
+    /**
+     * {@see BooleanExpressionFunctionLogicalAnd}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> and() {
+        return BooleanExpressionFunctionLogicalAnd.instance();
     }
 
     /**
