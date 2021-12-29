@@ -62,7 +62,7 @@ public final class BooleanExpressionFunctionTest extends BooleanExpressionFuncti
 
     @Test
     public void testResolveReferencesFalse() {
-        this.resolveReferenceAndCheck(false);
+        this.resolveReferenceAndCheck(true);
     }
 
     @Test
