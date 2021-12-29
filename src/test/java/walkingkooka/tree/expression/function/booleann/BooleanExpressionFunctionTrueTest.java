@@ -21,7 +21,7 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
-public final class BooleanExpressionFunctionTrueTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionTrue<ExpressionFunctionContext>, Boolean> {
+public final class BooleanExpressionFunctionTrueTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionTrue<ExpressionFunctionContext>> {
 
     @Test
     public void testExecuteFunction() {
