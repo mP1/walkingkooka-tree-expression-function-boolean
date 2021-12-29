@@ -21,11 +21,11 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
-public final class FalseExpressionFunctionTest extends BooleanExpressionFunctionTestCase<FalseExpressionFunction<ExpressionFunctionContext>, Boolean> {
+public final class BooleanExpressionFunctionTrueTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionTrue<ExpressionFunctionContext>, Boolean> {
 
     @Test
     public void testExecuteFunction() {
-        this.applyAndCheck2(parameters(), Boolean.FALSE);
+        this.applyAndCheck2(parameters(), Boolean.TRUE);
     }
 
     @Test
@@ -35,16 +35,16 @@ public final class FalseExpressionFunctionTest extends BooleanExpressionFunction
 
     @Test
     public void testToString() {
-        this.toStringAndCheck(this.createBiFunction(), "false");
+        this.toStringAndCheck(this.createBiFunction(), "true");
     }
 
     @Override
-    public FalseExpressionFunction<ExpressionFunctionContext> createBiFunction() {
-        return FalseExpressionFunction.instance();
+    public BooleanExpressionFunctionTrue<ExpressionFunctionContext> createBiFunction() {
+        return BooleanExpressionFunctionTrue.instance();
     }
 
     @Override
-    public Class<FalseExpressionFunction<ExpressionFunctionContext>> type() {
-        return Cast.to(FalseExpressionFunction.class);
+    public Class<BooleanExpressionFunctionTrue<ExpressionFunctionContext>> type() {
+        return Cast.to(BooleanExpressionFunctionTrue.class);
     }
 }

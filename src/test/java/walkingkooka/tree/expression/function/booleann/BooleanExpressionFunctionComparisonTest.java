@@ -23,7 +23,7 @@ import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public final class ComparisonExpressionFunctionTest extends BooleanExpressionFunctionTestCase<ComparisonExpressionFunction<ExpressionFunctionContext>, Boolean> {
+public final class BooleanExpressionFunctionComparisonTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionComparison<ExpressionFunctionContext>, Boolean> {
 
     @Test
     public void testZeroParametersFails() {
@@ -50,7 +50,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testEqualsLess() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.equals(),
+                BooleanExpressionFunctionComparison.equals(),
                 "a",
                 "b",
                 false
@@ -60,7 +60,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testEqualsEqual() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.equals(),
+                BooleanExpressionFunctionComparison.equals(),
                 "a",
                 "a",
                 true
@@ -70,7 +70,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testEqualsMore() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.equals(),
+                BooleanExpressionFunctionComparison.equals(),
                 "z",
                 "a",
                 false
@@ -82,7 +82,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testNotEqualsLess() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.notEquals(),
+                BooleanExpressionFunctionComparison.notEquals(),
                 "a",
                 "b",
                 true
@@ -92,7 +92,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testNotEqualsNeual() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.notEquals(),
+                BooleanExpressionFunctionComparison.notEquals(),
                 "a",
                 "a",
                 false
@@ -102,7 +102,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testNotEqualsMore() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.notEquals(),
+                BooleanExpressionFunctionComparison.notEquals(),
                 "z",
                 "a",
                 true
@@ -114,7 +114,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testGreaterThanLess() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.greaterThan(),
+                BooleanExpressionFunctionComparison.greaterThan(),
                 "a",
                 "b",
                 false
@@ -124,7 +124,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testGreaterThanEqual() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.greaterThan(),
+                BooleanExpressionFunctionComparison.greaterThan(),
                 "a",
                 "a",
                 false
@@ -134,7 +134,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testGreaterThanMore() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.greaterThan(),
+                BooleanExpressionFunctionComparison.greaterThan(),
                 "z",
                 "a",
                 true
@@ -146,7 +146,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testGreaterThanEqualsLess() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.greaterThanEqual(),
+                BooleanExpressionFunctionComparison.greaterThanEqual(),
                 "a",
                 "b",
                 false
@@ -156,7 +156,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testGreaterThanEqualsEqual() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.greaterThanEqual(),
+                BooleanExpressionFunctionComparison.greaterThanEqual(),
                 "a",
                 "a",
                 true
@@ -166,7 +166,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testGreaterThanEqualsMore() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.greaterThanEqual(),
+                BooleanExpressionFunctionComparison.greaterThanEqual(),
                 "z",
                 "a",
                 true
@@ -178,7 +178,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testLessThanLess() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.lessThan(),
+                BooleanExpressionFunctionComparison.lessThan(),
                 "a",
                 "b",
                 true
@@ -188,7 +188,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testLessThanEqual() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.lessThan(),
+                BooleanExpressionFunctionComparison.lessThan(),
                 "a",
                 "a",
                 false
@@ -198,7 +198,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testLessThanMore() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.lessThan(),
+                BooleanExpressionFunctionComparison.lessThan(),
                 "z",
                 "a",
                 false
@@ -210,7 +210,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testLessThanEqualsLess() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.lessThanEqual(),
+                BooleanExpressionFunctionComparison.lessThanEqual(),
                 "a",
                 "b",
                 true
@@ -220,7 +220,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testLessThanEqualsEqual() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.lessThanEqual(),
+                BooleanExpressionFunctionComparison.lessThanEqual(),
                 "a",
                 "a",
                 true
@@ -230,7 +230,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     @Test
     public void testLessThanEqualsMore() {
         this.applyAndCheck3(
-                ComparisonExpressionFunction.lessThanEqual(),
+                BooleanExpressionFunctionComparison.lessThanEqual(),
                 "z",
                 "a",
                 false
@@ -239,7 +239,7 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
 
     // helper........................................................................................
 
-    void applyAndCheck3(final ComparisonExpressionFunction<ExpressionFunctionContext> function,
+    void applyAndCheck3(final BooleanExpressionFunctionComparison<ExpressionFunctionContext> function,
                         final Object first,
                         final Object second,
                         final Boolean result) {
@@ -256,12 +256,12 @@ public final class ComparisonExpressionFunctionTest extends BooleanExpressionFun
     }
 
     @Override
-    public ComparisonExpressionFunction<ExpressionFunctionContext> createBiFunction() {
-        return ComparisonExpressionFunction.greaterThan();
+    public BooleanExpressionFunctionComparison<ExpressionFunctionContext> createBiFunction() {
+        return BooleanExpressionFunctionComparison.greaterThan();
     }
 
     @Override
-    public Class<ComparisonExpressionFunction<ExpressionFunctionContext>> type() {
-        return Cast.to(ComparisonExpressionFunction.class);
+    public Class<BooleanExpressionFunctionComparison<ExpressionFunctionContext>> type() {
+        return Cast.to(BooleanExpressionFunctionComparison.class);
     }
 }

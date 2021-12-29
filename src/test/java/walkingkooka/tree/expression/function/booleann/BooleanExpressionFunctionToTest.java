@@ -23,7 +23,7 @@ import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public final class IfExpressionFunctionTest extends BooleanExpressionFunctionTestCase<IfExpressionFunction<ExpressionFunctionContext>, Object> {
+public final class BooleanExpressionFunctionToTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionTo<ExpressionFunctionContext>, Boolean> {
 
     @Test
     public void testZeroParametersFails() {
@@ -31,23 +31,33 @@ public final class IfExpressionFunctionTest extends BooleanExpressionFunctionTes
     }
 
     @Test
-    public void testOneParametersFails() {
-        assertThrows(IllegalArgumentException.class, () -> this.apply2("a1"));
+    public void testTwoParametersFails() {
+        assertThrows(IllegalArgumentException.class, () -> this.apply2("a1", "b2"));
     }
 
     @Test
-    public void testTwoParametersFails() {
-        assertThrows(IllegalArgumentException.class, () -> this.apply2("a1", 2));
+    public void testEmptyString() {
+        this.applyAndCheck2(parameters(""), false);
+    }
+
+    @Test
+    public void testStringTrue() {
+        this.applyAndCheck2(parameters("true"), true);
+    }
+
+    @Test
+    public void testStringFalse() {
+        this.applyAndCheck2(parameters("false"), false);
     }
 
     @Test
     public void testBooleanTrue() {
-        this.applyAndCheck2(parameters(true, "*1", "*2"), "*1");
+        this.applyAndCheck2(parameters(true), true);
     }
 
     @Test
     public void testBooleanFalse() {
-        this.applyAndCheck2(parameters(false, "*1", "*2"), "*2");
+        this.applyAndCheck2(parameters(false), false);
     }
 
     @Test
@@ -57,20 +67,16 @@ public final class IfExpressionFunctionTest extends BooleanExpressionFunctionTes
 
     @Test
     public void testToString() {
-        this.toStringAndCheck(this.createBiFunction(), "choose");
-    }
-
-    public void testTypeNaming() {
-        throw new UnsupportedOperationException();
+        this.toStringAndCheck(this.createBiFunction(), "boolean");
     }
 
     @Override
-    public IfExpressionFunction<ExpressionFunctionContext> createBiFunction() {
-        return IfExpressionFunction.instance();
+    public BooleanExpressionFunctionTo<ExpressionFunctionContext> createBiFunction() {
+        return BooleanExpressionFunctionTo.instance();
     }
 
     @Override
-    public Class<IfExpressionFunction<ExpressionFunctionContext>> type() {
-        return Cast.to(IfExpressionFunction.class);
+    public Class<BooleanExpressionFunctionTo<ExpressionFunctionContext>> type() {
+        return Cast.to(BooleanExpressionFunctionTo.class);
     }
 }

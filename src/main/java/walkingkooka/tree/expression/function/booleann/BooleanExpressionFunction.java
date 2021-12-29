@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2019 Miroslav Pokorny (github.com/mP1)
  *
@@ -17,91 +18,36 @@
 
 package walkingkooka.tree.expression.function.booleann;
 
-import walkingkooka.Cast;
-import walkingkooka.collect.list.Lists;
 import walkingkooka.tree.expression.ExpressionPurityContext;
-import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunction;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
-import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
-import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
-
-import java.util.List;
 
 /**
- * A function that converts the given value into a {@link Boolean}.
+ * Common abstract base class for all boolean functions in this package.
  */
-final class BooleanExpressionFunction<C extends ExpressionFunctionContext> implements ExpressionFunction<Boolean, C> {
+abstract class BooleanExpressionFunction<C extends ExpressionFunctionContext> implements ExpressionFunction<Boolean, C> {
 
-    /**
-     * Instance getter.
-     */
-    static <C extends ExpressionFunctionContext> BooleanExpressionFunction<C> instance() {
-        return Cast.to(INSTANCE);
-    }
-
-    /**
-     * Singleton
-     */
-    private static final BooleanExpressionFunction INSTANCE = new BooleanExpressionFunction();
-
-    /**
-     * Private ctor
-     */
-    private BooleanExpressionFunction() {
+    BooleanExpressionFunction() {
         super();
     }
 
     @Override
-    public Boolean apply(final List<Object> parameters,
-                         final C context) {
-        this.checkOnlyRequiredParameters(parameters);
-
-        return context.convertOrFail(
-                PARAMETER.getOrFail(parameters, 0),
-                Boolean.class
-        );
-    }
-
-    @Override
-    public FunctionExpressionName name() {
-        return NAME;
-    }
-
-    private final static FunctionExpressionName NAME = FunctionExpressionName.with("boolean");
-
-    @Override
-    public List<ExpressionFunctionParameter<?>> parameters() {
-        return PARAMETERS;
-    }
-
-    private final static ExpressionFunctionParameter<Object> PARAMETER = ExpressionFunctionParameterName.with("parameter")
-            .setType(Object.class);
-
-    private final static List<ExpressionFunctionParameter<?>> PARAMETERS = Lists.of(PARAMETER);
-
-    @Override
-    public boolean lsLastParameterVariable() {
-        return false;
-    }
-
-    @Override
-    public Class<Boolean> returnType() {
+    public final Class<Boolean> returnType() {
         return Boolean.class;
     }
 
     @Override
-    public boolean resolveReferences() {
+    public final boolean resolveReferences() {
         return true;
     }
 
     @Override
-    public boolean isPure(final ExpressionPurityContext context) {
+    public final boolean isPure(final ExpressionPurityContext context) {
         return true;
     }
 
     @Override
-    public String toString() {
+    public final String toString() {
         return this.name().toString();
     }
 }

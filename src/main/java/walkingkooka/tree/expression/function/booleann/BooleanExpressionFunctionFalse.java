@@ -19,35 +19,33 @@ package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.ExpressionPurityContext;
 import walkingkooka.tree.expression.FunctionExpressionName;
-import walkingkooka.tree.expression.function.ExpressionFunction;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
 import java.util.List;
 
 /**
- * A function that always returns true
+ * A function that always returns false
  */
-final class TrueExpressionFunction<C extends ExpressionFunctionContext> implements ExpressionFunction<Boolean, C> {
+final class BooleanExpressionFunctionFalse<C extends ExpressionFunctionContext> extends BooleanExpressionFunction<C> {
 
     /**
      * Instance getter.
      */
-    static <C extends ExpressionFunctionContext> TrueExpressionFunction<C> instance() {
+    static <C extends ExpressionFunctionContext> BooleanExpressionFunctionFalse<C> instance() {
         return Cast.to(INSTANCE);
     }
 
     /**
      * Singleton
      */
-    private static final TrueExpressionFunction INSTANCE = new TrueExpressionFunction();
+    private static final BooleanExpressionFunctionFalse INSTANCE = new BooleanExpressionFunctionFalse();
 
     /**
      * Private ctor
      */
-    private TrueExpressionFunction() {
+    private BooleanExpressionFunctionFalse() {
         super();
     }
 
@@ -55,7 +53,7 @@ final class TrueExpressionFunction<C extends ExpressionFunctionContext> implemen
     public Boolean apply(final List<Object> parameters,
                          final C context) {
         this.checkOnlyRequiredParameters(parameters);
-        return Boolean.TRUE;
+        return Boolean.FALSE;
     }
 
     @Override
@@ -63,7 +61,7 @@ final class TrueExpressionFunction<C extends ExpressionFunctionContext> implemen
         return NAME;
     }
 
-    private final static FunctionExpressionName NAME = FunctionExpressionName.with("true");
+    private final static FunctionExpressionName NAME = FunctionExpressionName.with("false");
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters() {
@@ -73,25 +71,5 @@ final class TrueExpressionFunction<C extends ExpressionFunctionContext> implemen
     @Override
     public boolean lsLastParameterVariable() {
         return false;
-    }
-
-    @Override
-    public Class<Boolean> returnType() {
-        return Boolean.class;
-    }
-
-    @Override
-    public boolean resolveReferences() {
-        return true;
-    }
-
-    @Override
-    public boolean isPure(final ExpressionPurityContext context) {
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return this.name().toString();
     }
 }
