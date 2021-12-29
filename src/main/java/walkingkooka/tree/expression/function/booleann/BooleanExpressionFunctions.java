@@ -45,6 +45,7 @@ public final class BooleanExpressionFunctions implements PublicStaticHelper {
                 lessThanEquals(),
                 not(),
                 notEquals(),
+                or(),
                 trueFunction()
         ).forEach(consumer);
     }
@@ -124,6 +125,13 @@ public final class BooleanExpressionFunctions implements PublicStaticHelper {
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> notEquals() {
         return BooleanExpressionFunctionComparison.notEquals();
+    }
+
+    /**
+     * {@see BooleanExpressionFunctionLogicalOr}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> or() {
+        return BooleanExpressionFunctionLogicalOr.instance();
     }
 
     /**

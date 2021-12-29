@@ -17,8 +17,6 @@
 
 package walkingkooka.tree.expression.function.booleann;
 
-import walkingkooka.Cast;
-import walkingkooka.tree.expression.function.ExpressionFunction;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
@@ -45,4 +43,10 @@ abstract class BooleanExpressionFunctionLogical<C extends ExpressionFunctionCont
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             PARAMETER
     );
+
+    static void checkParameterCount(final int count) {
+        if (0 == count) {
+            throw new IllegalArgumentException("Expected at least 1 parameter but got 0");
+        }
+    }
 }

@@ -23,24 +23,24 @@ import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
 import java.util.List;
 
-final class BooleanExpressionFunctionLogicalAnd<C extends ExpressionFunctionContext> extends BooleanExpressionFunctionLogical<C> {
+final class BooleanExpressionFunctionLogicalOr<C extends ExpressionFunctionContext> extends BooleanExpressionFunctionLogical<C> {
 
     /**
      * Instance getter.
      */
-    static <C extends ExpressionFunctionContext> BooleanExpressionFunctionLogicalAnd<C> instance() {
+    static <C extends ExpressionFunctionContext> BooleanExpressionFunctionLogicalOr<C> instance() {
         return Cast.to(INSTANCE);
     }
 
     /**
      * Singleton
      */
-    private static final BooleanExpressionFunctionLogicalAnd INSTANCE = new BooleanExpressionFunctionLogicalAnd();
+    private static final BooleanExpressionFunctionLogicalOr INSTANCE = new BooleanExpressionFunctionLogicalOr();
 
     /**
      * Private ctor
      */
-    private BooleanExpressionFunctionLogicalAnd() {
+    private BooleanExpressionFunctionLogicalOr() {
         super();
     }
 
@@ -49,7 +49,7 @@ final class BooleanExpressionFunctionLogicalAnd<C extends ExpressionFunctionCont
         return NAME;
     }
 
-    private final static FunctionExpressionName NAME = FunctionExpressionName.with("and");
+    private final static FunctionExpressionName NAME = FunctionExpressionName.with("or");
 
     @Override
     public Boolean apply(final List<Object> parameters,
@@ -57,12 +57,12 @@ final class BooleanExpressionFunctionLogicalAnd<C extends ExpressionFunctionCont
         final int count = parameters.size();
         checkParameterCount(count);
 
-        boolean result = true;
+        boolean result = false;
 
         int i = 0;
         while (i < count) {
-            result = result & PARAMETER.getOrFail(parameters, i);
-            if (!result) {
+            result = result | PARAMETER.getOrFail(parameters, i);
+            if (result) {
                 break;
             }
             i++;
