@@ -14,17 +14,17 @@ A collection of ExpressionFunction(s) that operate and return boolean results. M
 
 ## Available functions
 
-- boolean
-- equals
-- false
-- greaterThan
-- greaterThanEquals
-- if
-- lessThan
-- lessThanEquals
-- not
-- notEquals
-- true
+- boolean(object)
+- equals(object)
+- false()
+- greaterThan(Comparable)
+- greaterThanEquals(Comparable)
+- if(boolean,object,object)
+- lessThan(Comparable)
+- lessThanEquals(Comparable)
+- not(boolean)
+- notEquals(object)
+- true()
 
 
 
