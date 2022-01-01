@@ -21,7 +21,6 @@ import walkingkooka.Cast;
 import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
-import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
 import java.util.List;
 
@@ -69,8 +68,7 @@ final class BooleanExpressionFunctionNot<C extends ExpressionFunctionContext> ex
         return PARAMETERS;
     }
 
-    private final static ExpressionFunctionParameter<Boolean> PARAMETER = ExpressionFunctionParameterName.with("parameter")
-            .setType(Boolean.class);
+    private final static ExpressionFunctionParameter<Boolean> PARAMETER = ExpressionFunctionParameter.BOOLEAN;
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             PARAMETER
