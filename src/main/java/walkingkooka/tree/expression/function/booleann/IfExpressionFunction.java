@@ -73,8 +73,7 @@ final class IfExpressionFunction<C extends ExpressionFunctionContext> implements
         return PARAMETERS;
     }
 
-    private final static ExpressionFunctionParameter<Boolean> BOOLEAN = ExpressionFunctionParameterName.with("boolean")
-            .setType(Boolean.class);
+    private final static ExpressionFunctionParameter<Boolean> BOOLEAN = ExpressionFunctionParameter.BOOLEAN;
 
     private final static ExpressionFunctionParameter<Object> TRUE = ExpressionFunctionParameterName.with("true-value")
             .setType(Object.class);
