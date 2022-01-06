@@ -18,7 +18,6 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
 import java.util.List;
@@ -41,15 +40,8 @@ final class BooleanExpressionFunctionLogicalXor<C extends ExpressionFunctionCont
      * Private ctor
      */
     private BooleanExpressionFunctionLogicalXor() {
-        super();
+        super("xor");
     }
-
-    @Override
-    public FunctionExpressionName name() {
-        return NAME;
-    }
-
-    private final static FunctionExpressionName NAME = FunctionExpressionName.with("xor");
 
     @Override
     public Boolean apply(final List<Object> parameters,

@@ -28,8 +28,8 @@ import java.util.List;
  */
 abstract class BooleanExpressionFunctionLogical<C extends ExpressionFunctionContext> extends BooleanExpressionFunction<C> {
 
-    BooleanExpressionFunctionLogical() {
-        super();
+    BooleanExpressionFunctionLogical(final String name) {
+        super(name);
     }
 
     @Override

@@ -18,7 +18,6 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
@@ -45,7 +44,7 @@ final class BooleanExpressionFunctionNot<C extends ExpressionFunctionContext> ex
      * Private ctor
      */
     private BooleanExpressionFunctionNot() {
-        super();
+        super("not");
     }
 
     @Override
@@ -55,13 +54,6 @@ final class BooleanExpressionFunctionNot<C extends ExpressionFunctionContext> ex
 
         return !PARAMETER.getOrFail(parameters, 0);
     }
-
-    @Override
-    public FunctionExpressionName name() {
-        return NAME;
-    }
-
-    private final static FunctionExpressionName NAME = FunctionExpressionName.with("not");
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters() {

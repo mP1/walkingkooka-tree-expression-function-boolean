@@ -18,7 +18,6 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
 import java.util.List;
@@ -41,15 +40,8 @@ final class BooleanExpressionFunctionLogicalOr<C extends ExpressionFunctionConte
      * Private ctor
      */
     private BooleanExpressionFunctionLogicalOr() {
-        super();
+        super("or");
     }
-
-    @Override
-    public FunctionExpressionName name() {
-        return NAME;
-    }
-
-    private final static FunctionExpressionName NAME = FunctionExpressionName.with("or");
 
     @Override
     public Boolean apply(final List<Object> parameters,

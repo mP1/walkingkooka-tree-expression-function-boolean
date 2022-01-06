@@ -41,12 +41,7 @@ final class BooleanExpressionFunctionLogicalAnd<C extends ExpressionFunctionCont
      * Private ctor
      */
     private BooleanExpressionFunctionLogicalAnd() {
-        super();
-    }
-
-    @Override
-    public FunctionExpressionName name() {
-        return NAME;
+        super("and");
     }
 
     private final static FunctionExpressionName NAME = FunctionExpressionName.with("and");
