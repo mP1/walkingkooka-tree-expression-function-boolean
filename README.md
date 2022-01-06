@@ -20,6 +20,7 @@ A collection of ExpressionFunction(s) that operate and return boolean results. M
 - greaterThan(Comparable)
 - greaterThanEquals(Comparable)
 - if(boolean,object,object)
+- isBoolean(object)
 - lessThan(Comparable)
 - lessThanEquals(Comparable)
 - not(boolean)
