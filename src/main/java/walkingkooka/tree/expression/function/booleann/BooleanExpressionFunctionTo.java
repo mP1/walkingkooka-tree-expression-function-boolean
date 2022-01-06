@@ -19,7 +19,6 @@ package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
@@ -47,7 +46,7 @@ final class BooleanExpressionFunctionTo<C extends ExpressionFunctionContext> ext
      * Private ctor
      */
     private BooleanExpressionFunctionTo() {
-        super();
+        super("boolean");
     }
 
     @Override
@@ -60,13 +59,6 @@ final class BooleanExpressionFunctionTo<C extends ExpressionFunctionContext> ext
                 Boolean.class
         );
     }
-
-    @Override
-    public FunctionExpressionName name() {
-        return NAME;
-    }
-
-    private final static FunctionExpressionName NAME = FunctionExpressionName.with("boolean");
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters() {

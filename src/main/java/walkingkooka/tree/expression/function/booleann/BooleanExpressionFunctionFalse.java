@@ -19,7 +19,6 @@ package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
@@ -46,7 +45,7 @@ final class BooleanExpressionFunctionFalse<C extends ExpressionFunctionContext> 
      * Private ctor
      */
     private BooleanExpressionFunctionFalse() {
-        super();
+        super("false");
     }
 
     @Override
@@ -55,13 +54,6 @@ final class BooleanExpressionFunctionFalse<C extends ExpressionFunctionContext> 
         this.checkOnlyRequiredParameters(parameters);
         return Boolean.FALSE;
     }
-
-    @Override
-    public FunctionExpressionName name() {
-        return NAME;
-    }
-
-    private final static FunctionExpressionName NAME = FunctionExpressionName.with("false");
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters() {

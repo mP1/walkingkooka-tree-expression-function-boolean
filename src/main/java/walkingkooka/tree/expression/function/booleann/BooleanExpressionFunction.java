@@ -19,6 +19,7 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.tree.expression.ExpressionPurityContext;
+import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunction;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
@@ -27,9 +28,17 @@ import walkingkooka.tree.expression.function.ExpressionFunctionContext;
  */
 abstract class BooleanExpressionFunction<C extends ExpressionFunctionContext> implements ExpressionFunction<Boolean, C> {
 
-    BooleanExpressionFunction() {
+    BooleanExpressionFunction(final String name) {
         super();
+        this.name = FunctionExpressionName.with(name);
     }
+
+    @Override
+    public final FunctionExpressionName name() {
+        return name;
+    }
+
+    private final FunctionExpressionName name;
 
     @Override
     public final Class<Boolean> returnType() {

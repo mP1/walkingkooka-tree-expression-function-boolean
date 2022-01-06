@@ -19,7 +19,6 @@ package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
 import walkingkooka.compare.ComparisonRelation;
-import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
@@ -72,8 +71,7 @@ final class BooleanExpressionFunctionComparison<C extends ExpressionFunctionCont
      * Private ctor
      */
     private BooleanExpressionFunctionComparison(final String name, final ComparisonRelation relation) {
-        super();
-        this.name = FunctionExpressionName.with(name);
+        super(name);
         this.relation = relation;
     }
 
@@ -91,13 +89,6 @@ final class BooleanExpressionFunctionComparison<C extends ExpressionFunctionCont
     }
 
     private final ComparisonRelation relation;
-
-    @Override
-    public FunctionExpressionName name() {
-        return name;
-    }
-
-    private final FunctionExpressionName name;
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters() {
