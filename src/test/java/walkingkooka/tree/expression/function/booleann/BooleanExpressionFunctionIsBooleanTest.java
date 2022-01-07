@@ -22,7 +22,7 @@ import walkingkooka.Cast;
 import walkingkooka.tree.expression.ExpressionNumberKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
-public final class BooleanExpressionFunctionIsTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionIs<ExpressionFunctionContext>> {
+public final class BooleanExpressionFunctionIsBooleanTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionIsBoolean<ExpressionFunctionContext>> {
 
     @Test
     public void testNullParameterFalse() {
@@ -82,12 +82,12 @@ public final class BooleanExpressionFunctionIsTest extends BooleanExpressionFunc
     }
 
     @Override
-    public BooleanExpressionFunctionIs<ExpressionFunctionContext> createBiFunction() {
-        return BooleanExpressionFunctionIs.instance();
+    public BooleanExpressionFunctionIsBoolean<ExpressionFunctionContext> createBiFunction() {
+        return BooleanExpressionFunctionIsBoolean.instance();
     }
 
     @Override
-    public Class<BooleanExpressionFunctionIs<ExpressionFunctionContext>> type() {
-        return Cast.to(BooleanExpressionFunctionIs.class);
+    public Class<BooleanExpressionFunctionIsBoolean<ExpressionFunctionContext>> type() {
+        return Cast.to(BooleanExpressionFunctionIsBoolean.class);
     }
 }
