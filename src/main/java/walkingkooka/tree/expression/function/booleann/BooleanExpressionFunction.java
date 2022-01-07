@@ -47,7 +47,7 @@ abstract class BooleanExpressionFunction<C extends ExpressionFunctionContext> im
 
     @Override
     public final boolean resolveReferences() {
-        return true;
+        return !(this instanceof BooleanExpressionFunctionIsReference);
     }
 
     @Override
