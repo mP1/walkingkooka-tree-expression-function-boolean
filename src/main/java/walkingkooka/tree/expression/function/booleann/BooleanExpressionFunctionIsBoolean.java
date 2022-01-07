@@ -26,24 +26,24 @@ import java.util.List;
 /**
  * A function that tests if the value given is a boolean.
  */
-final class BooleanExpressionFunctionIs<C extends ExpressionFunctionContext> extends BooleanExpressionFunction<C> {
+final class BooleanExpressionFunctionIsBoolean<C extends ExpressionFunctionContext> extends BooleanExpressionFunction<C> {
 
     /**
      * Instance getter.
      */
-    static <C extends ExpressionFunctionContext> BooleanExpressionFunctionIs<C> instance() {
+    static <C extends ExpressionFunctionContext> BooleanExpressionFunctionIsBoolean<C> instance() {
         return Cast.to(INSTANCE);
     }
 
     /**
      * Singleton
      */
-    private static final BooleanExpressionFunctionIs INSTANCE = new BooleanExpressionFunctionIs();
+    private static final BooleanExpressionFunctionIsBoolean INSTANCE = new BooleanExpressionFunctionIsBoolean();
 
     /**
      * Private ctor
      */
-    private BooleanExpressionFunctionIs() {
+    private BooleanExpressionFunctionIsBoolean() {
         super("isBoolean");
     }
 

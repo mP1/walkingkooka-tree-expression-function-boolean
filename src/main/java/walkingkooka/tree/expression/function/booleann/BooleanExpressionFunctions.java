@@ -102,10 +102,10 @@ public final class BooleanExpressionFunctions implements PublicStaticHelper {
     }
 
     /**
-     * {@see BooleanExpressionFunctionIs}
+     * {@see BooleanExpressionFunctionIsBoolean}
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> isBoolean() {
-        return BooleanExpressionFunctionIs.instance();
+        return BooleanExpressionFunctionIsBoolean.instance();
     }
 
     /**
