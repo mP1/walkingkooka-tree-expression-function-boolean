@@ -42,7 +42,7 @@ public final class BooleanExpressionFunctionComparisonTest extends BooleanExpres
 
     @Test
     public void testResolveReferencesFalse() {
-        this.resolveReferenceAndCheck(true);
+        this.resolveReferencesAndCheck(true);
     }
 
     // EQ........................................................................................

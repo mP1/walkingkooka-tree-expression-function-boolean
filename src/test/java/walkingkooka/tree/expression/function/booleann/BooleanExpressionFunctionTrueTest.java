@@ -30,7 +30,7 @@ public final class BooleanExpressionFunctionTrueTest extends BooleanExpressionFu
 
     @Test
     public void testResolveReferencesTrue() {
-        this.resolveReferenceAndCheck(true);
+        this.resolveReferencesAndCheck(true);
     }
 
     @Test
