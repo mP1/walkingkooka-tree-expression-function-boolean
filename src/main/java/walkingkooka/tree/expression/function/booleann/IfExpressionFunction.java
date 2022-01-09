@@ -98,6 +98,11 @@ final class IfExpressionFunction<C extends ExpressionFunctionContext> implements
     }
 
     @Override
+    public boolean requiresEvaluatedParameters() {
+        return true;
+    }
+
+    @Override
     public boolean resolveReferences() {
         return true;
     }
