@@ -52,7 +52,7 @@ public final class IfExpressionFunctionTest extends ExpressionFunctionTestCase<I
 
     @Test
     public void testResolveReferencesFalse() {
-        this.resolveReferenceAndCheck(true);
+        this.resolveReferencesAndCheck(true);
     }
 
     @Test

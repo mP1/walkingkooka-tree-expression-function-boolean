@@ -30,7 +30,7 @@ public final class BooleanExpressionFunctionFalseTest extends BooleanExpressionF
 
     @Test
     public void testResolveReferencesTrue() {
-        this.resolveReferenceAndCheck(true);
+        this.resolveReferencesAndCheck(true);
     }
 
     @Test
