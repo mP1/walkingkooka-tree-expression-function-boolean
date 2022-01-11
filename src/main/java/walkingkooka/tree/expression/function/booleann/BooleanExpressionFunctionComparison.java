@@ -78,7 +78,7 @@ final class BooleanExpressionFunctionComparison<C extends ExpressionFunctionCont
     @Override
     public Boolean apply(final List<Object> parameters,
                          final C context) {
-        this.checkOnlyRequiredParameters(parameters);
+        this.checkParameterCount(parameters);
 
         final Comparable<?> first = FIRST.getOrFail(parameters, 0);
         final Comparable<?> second = SECOND.getOrFail(parameters, 1);
@@ -96,10 +96,10 @@ final class BooleanExpressionFunctionComparison<C extends ExpressionFunctionCont
     }
 
     private final static ExpressionFunctionParameter<Comparable> FIRST = ExpressionFunctionParameterName.with("first")
-            .setType(Comparable.class);
+            .required(Comparable.class);
 
     private final static ExpressionFunctionParameter<Comparable> SECOND = ExpressionFunctionParameterName.with("second")
-            .setType(Comparable.class);
+            .required(Comparable.class);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(FIRST, SECOND);
 }
