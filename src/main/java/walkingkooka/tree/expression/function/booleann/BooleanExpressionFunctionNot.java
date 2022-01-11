@@ -50,7 +50,7 @@ final class BooleanExpressionFunctionNot<C extends ExpressionFunctionContext> ex
     @Override
     public Boolean apply(final List<Object> parameters,
                          final C context) {
-        this.checkOnlyRequiredParameters(parameters);
+        this.checkParameterCount(parameters);
 
         return !PARAMETER.getOrFail(parameters, 0);
     }

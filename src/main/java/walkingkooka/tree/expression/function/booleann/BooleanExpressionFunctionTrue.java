@@ -51,7 +51,7 @@ final class BooleanExpressionFunctionTrue<C extends ExpressionFunctionContext> e
     @Override
     public Boolean apply(final List<Object> parameters,
                          final C context) {
-        this.checkOnlyRequiredParameters(parameters);
+        this.checkParameterCount(parameters);
         return Boolean.TRUE;
     }
 

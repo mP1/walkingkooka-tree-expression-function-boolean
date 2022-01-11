@@ -61,11 +61,6 @@ abstract class BooleanExpressionFunction<C extends ExpressionFunctionContext> im
     }
 
     @Override
-    public final boolean lsLastParameterVariable() {
-        return this instanceof BooleanExpressionFunctionLogical;
-    }
-
-    @Override
     public final String toString() {
         return this.name().toString();
     }

@@ -54,7 +54,7 @@ final class IfExpressionFunction<C extends ExpressionFunctionContext> implements
     @Override
     public Object apply(final List<Object> parameters,
                         final C context) {
-        this.checkOnlyRequiredParameters(parameters);
+        this.checkParameterCount(parameters);
 
         return BOOLEAN.getOrFail(parameters, 0) ?
                 TRUE.getOrFail(parameters, 1) :
@@ -76,21 +76,16 @@ final class IfExpressionFunction<C extends ExpressionFunctionContext> implements
     private final static ExpressionFunctionParameter<Boolean> BOOLEAN = ExpressionFunctionParameter.BOOLEAN;
 
     private final static ExpressionFunctionParameter<Object> TRUE = ExpressionFunctionParameterName.with("true-value")
-            .setType(Object.class);
+            .required(Object.class);
 
     private final static ExpressionFunctionParameter<Object> FALSE = ExpressionFunctionParameterName.with("false-value")
-            .setType(Object.class);
+            .required(Object.class);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             BOOLEAN,
             TRUE,
             FALSE
     );
-
-    @Override
-    public boolean lsLastParameterVariable() {
-        return false;
-    }
 
     @Override
     public Class<Object> returnType() {

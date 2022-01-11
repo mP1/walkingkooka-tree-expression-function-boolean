@@ -38,7 +38,7 @@ abstract class BooleanExpressionFunctionLogical<C extends ExpressionFunctionCont
     }
 
     final static ExpressionFunctionParameter<Boolean> PARAMETER = ExpressionFunctionParameterName.with("parameter")
-            .setType(Boolean.class);
+            .required(Boolean.class);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             PARAMETER

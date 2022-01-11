@@ -52,7 +52,7 @@ final class BooleanExpressionFunctionTo<C extends ExpressionFunctionContext> ext
     @Override
     public Boolean apply(final List<Object> parameters,
                          final C context) {
-        this.checkOnlyRequiredParameters(parameters);
+        this.checkParameterCount(parameters);
 
         return context.convertOrFail(
                 PARAMETER.getOrFail(parameters, 0),
@@ -66,7 +66,7 @@ final class BooleanExpressionFunctionTo<C extends ExpressionFunctionContext> ext
     }
 
     private final static ExpressionFunctionParameter<Object> PARAMETER = ExpressionFunctionParameterName.with("parameter")
-            .setType(Object.class);
+            .required(Object.class);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = Lists.of(PARAMETER);
 }
