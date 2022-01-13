@@ -49,6 +49,7 @@ public final class BooleanExpressionFunctions implements PublicStaticHelper {
                 not(),
                 notEquals(),
                 or(),
+                switchFunction(),
                 trueFunction(),
                 xor()
         ).forEach(consumer);
@@ -157,6 +158,13 @@ public final class BooleanExpressionFunctions implements PublicStaticHelper {
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> or() {
         return BooleanExpressionFunctionLogicalOr.instance();
+    }
+
+    /**
+     * {@see ObjectExpressionFunctionSwitch}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<Object, C> switchFunction() {
+        return ObjectExpressionFunctionSwitch.instance();
     }
 
     /**
