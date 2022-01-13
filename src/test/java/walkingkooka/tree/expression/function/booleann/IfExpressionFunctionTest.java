@@ -57,7 +57,7 @@ public final class IfExpressionFunctionTest extends ExpressionFunctionTestCase<I
 
     @Test
     public void testToString() {
-        this.toStringAndCheck(this.createBiFunction(), "choose");
+        this.toStringAndCheck(this.createBiFunction(), "if");
     }
 
     public void testTypeNaming() {

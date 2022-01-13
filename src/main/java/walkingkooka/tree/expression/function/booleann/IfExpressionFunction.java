@@ -66,7 +66,7 @@ final class IfExpressionFunction<C extends ExpressionFunctionContext> implements
         return NAME;
     }
 
-    private final static FunctionExpressionName NAME = FunctionExpressionName.with("choose");
+    private final static FunctionExpressionName NAME = FunctionExpressionName.with("if");
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters() {
