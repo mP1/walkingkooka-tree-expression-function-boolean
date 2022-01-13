@@ -15,6 +15,7 @@ A collection of ExpressionFunction(s) that operate and return boolean results. M
 ## Available functions
 
 - boolean(object)
+- choose(ExpressionNumber, Object...)
 - equals(object)
 - false()
 - greaterThan(Comparable)
