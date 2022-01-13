@@ -69,10 +69,10 @@ public final class BooleanExpressionFunctions implements PublicStaticHelper {
     }
 
     /**
-     * {@see ChooseExpressionFunction}
+     * {@see ObjectExpressionFunctionChoose}
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<Object, C> choose() {
-        return ChooseExpressionFunction.instance();
+        return ObjectExpressionFunctionChoose.instance();
     }
 
     /**
@@ -104,10 +104,10 @@ public final class BooleanExpressionFunctions implements PublicStaticHelper {
     }
 
     /**
-     * {@see IfExpressionFunction}
+     * {@see ObjectExpressionFunctionIf}
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<Object, C> ifFunction() {
-        return IfExpressionFunction.instance();
+        return ObjectExpressionFunctionIf.instance();
     }
 
     /**

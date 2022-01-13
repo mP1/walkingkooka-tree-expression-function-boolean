@@ -18,9 +18,6 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.ExpressionPurityContext;
-import walkingkooka.tree.expression.FunctionExpressionName;
-import walkingkooka.tree.expression.function.ExpressionFunction;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
@@ -30,25 +27,25 @@ import java.util.List;
 /**
  * A simple if that uses the first parameter when true to select the 2nd parameter or when false selects the third parameter.
  */
-final class IfExpressionFunction<C extends ExpressionFunctionContext> implements ExpressionFunction<Object, C> {
+final class ObjectExpressionFunctionIf<C extends ExpressionFunctionContext> extends ObjectExpressionFunction<C> {
 
     /**
      * Instance getter.
      */
-    static <C extends ExpressionFunctionContext> IfExpressionFunction<C> instance() {
+    static <C extends ExpressionFunctionContext> ObjectExpressionFunctionIf<C> instance() {
         return Cast.to(INSTANCE);
     }
 
     /**
      * Singleton
      */
-    private static final IfExpressionFunction INSTANCE = new IfExpressionFunction();
+    private static final ObjectExpressionFunctionIf INSTANCE = new ObjectExpressionFunctionIf();
 
     /**
      * Private ctor
      */
-    private IfExpressionFunction() {
-        super();
+    private ObjectExpressionFunctionIf() {
+        super("if");
     }
 
     @Override
@@ -60,13 +57,6 @@ final class IfExpressionFunction<C extends ExpressionFunctionContext> implements
                 TRUE.getOrFail(parameters, 1) :
                 FALSE.getOrFail(parameters, 2);
     }
-
-    @Override
-    public FunctionExpressionName name() {
-        return NAME;
-    }
-
-    private final static FunctionExpressionName NAME = FunctionExpressionName.with("if");
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters() {
@@ -86,29 +76,4 @@ final class IfExpressionFunction<C extends ExpressionFunctionContext> implements
             TRUE,
             FALSE
     );
-
-    @Override
-    public Class<Object> returnType() {
-        return Object.class;
-    }
-
-    @Override
-    public boolean requiresEvaluatedParameters() {
-        return true;
-    }
-
-    @Override
-    public boolean resolveReferences() {
-        return true;
-    }
-
-    @Override
-    public boolean isPure(final ExpressionPurityContext context) {
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return this.name().toString();
-    }
 }

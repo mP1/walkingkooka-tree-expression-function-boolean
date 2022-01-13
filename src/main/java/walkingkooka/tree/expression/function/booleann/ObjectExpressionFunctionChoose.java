@@ -19,9 +19,6 @@ package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
 import walkingkooka.tree.expression.ExpressionNumber;
-import walkingkooka.tree.expression.ExpressionPurityContext;
-import walkingkooka.tree.expression.FunctionExpressionName;
-import walkingkooka.tree.expression.function.ExpressionFunction;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
@@ -33,25 +30,25 @@ import java.util.List;
  * <br>
  * https://exceljet.net/excel-functions/excel-choose-function
  */
-final class ChooseExpressionFunction<C extends ExpressionFunctionContext> implements ExpressionFunction<Object, C> {
+final class ObjectExpressionFunctionChoose<C extends ExpressionFunctionContext> extends ObjectExpressionFunction<C> {
 
     /**
      * Instance getter.
      */
-    static <C extends ExpressionFunctionContext> ChooseExpressionFunction<C> instance() {
+    static <C extends ExpressionFunctionContext> ObjectExpressionFunctionChoose<C> instance() {
         return Cast.to(INSTANCE);
     }
 
     /**
      * Singleton
      */
-    private static final ChooseExpressionFunction INSTANCE = new ChooseExpressionFunction();
+    private static final ObjectExpressionFunctionChoose INSTANCE = new ObjectExpressionFunctionChoose();
 
     /**
      * Private ctor
      */
-    private ChooseExpressionFunction() {
-        super();
+    private ObjectExpressionFunctionChoose() {
+        super("choose");
     }
 
     @Override
@@ -64,13 +61,6 @@ final class ChooseExpressionFunction<C extends ExpressionFunctionContext> implem
 
         return VALUES.getVariable(parameters, 1).get(index - 1);
     }
-
-    @Override
-    public FunctionExpressionName name() {
-        return NAME;
-    }
-
-    private final static FunctionExpressionName NAME = FunctionExpressionName.with("choose");
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters() {
@@ -87,29 +77,4 @@ final class ChooseExpressionFunction<C extends ExpressionFunctionContext> implem
             INDEX,
             VALUES
     );
-
-    @Override
-    public Class<Object> returnType() {
-        return Object.class;
-    }
-
-    @Override
-    public boolean requiresEvaluatedParameters() {
-        return true;
-    }
-
-    @Override
-    public boolean resolveReferences() {
-        return true;
-    }
-
-    @Override
-    public boolean isPure(final ExpressionPurityContext context) {
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return this.name().toString();
-    }
 }
