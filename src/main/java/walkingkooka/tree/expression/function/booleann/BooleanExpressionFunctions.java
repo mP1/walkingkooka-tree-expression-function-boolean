@@ -36,6 +36,7 @@ public final class BooleanExpressionFunctions implements PublicStaticHelper {
         Lists.of(
                 and(),
                 booleanFunction(),
+                choose(),
                 equals(),
                 falseFunction(),
                 greaterThan(),
@@ -65,6 +66,13 @@ public final class BooleanExpressionFunctions implements PublicStaticHelper {
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> booleanFunction() {
         return BooleanExpressionFunctionTo.instance();
+    }
+
+    /**
+     * {@see ChooseExpressionFunction}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<Object, C> choose() {
+        return ChooseExpressionFunction.instance();
     }
 
     /**
