@@ -27,7 +27,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public final class ChooseExpressionFunctionTest extends ExpressionFunctionTestCase<ChooseExpressionFunction<ExpressionFunctionContext>, Object> {
+public final class ObjectExpressionFunctionChooseTest extends ObjectExpressionFunctionTestCase<ObjectExpressionFunctionChoose<ExpressionFunctionContext>> {
 
     @Test
     public void testZeroParametersFails() {
@@ -113,12 +113,12 @@ public final class ChooseExpressionFunctionTest extends ExpressionFunctionTestCa
     }
 
     @Override
-    public ChooseExpressionFunction<ExpressionFunctionContext> createBiFunction() {
-        return ChooseExpressionFunction.instance();
+    public ObjectExpressionFunctionChoose<ExpressionFunctionContext> createBiFunction() {
+        return ObjectExpressionFunctionChoose.instance();
     }
 
     @Override
-    public Class<ChooseExpressionFunction<ExpressionFunctionContext>> type() {
-        return Cast.to(ChooseExpressionFunction.class);
+    public Class<ObjectExpressionFunctionChoose<ExpressionFunctionContext>> type() {
+        return Cast.to(ObjectExpressionFunctionChoose.class);
     }
 }

@@ -23,7 +23,7 @@ import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public final class IfExpressionFunctionTest extends ExpressionFunctionTestCase<IfExpressionFunction<ExpressionFunctionContext>, Object> {
+public final class ObjectExpressionFunctionIfTest extends ObjectExpressionFunctionTestCase<ObjectExpressionFunctionIf<ExpressionFunctionContext>> {
 
     @Test
     public void testZeroParametersFails() {
@@ -65,12 +65,12 @@ public final class IfExpressionFunctionTest extends ExpressionFunctionTestCase<I
     }
 
     @Override
-    public IfExpressionFunction<ExpressionFunctionContext> createBiFunction() {
-        return IfExpressionFunction.instance();
+    public ObjectExpressionFunctionIf<ExpressionFunctionContext> createBiFunction() {
+        return ObjectExpressionFunctionIf.instance();
     }
 
     @Override
-    public Class<IfExpressionFunction<ExpressionFunctionContext>> type() {
-        return Cast.to(IfExpressionFunction.class);
+    public Class<ObjectExpressionFunctionIf<ExpressionFunctionContext>> type() {
+        return Cast.to(ObjectExpressionFunctionIf.class);
     }
 }
