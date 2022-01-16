@@ -42,6 +42,7 @@ public final class BooleanExpressionFunctions implements PublicStaticHelper {
                 greaterThan(),
                 greaterThanEquals(),
                 ifFunction(),
+                ifs(),
                 isBoolean(),
                 isReference(),
                 lessThan(),
@@ -109,6 +110,13 @@ public final class BooleanExpressionFunctions implements PublicStaticHelper {
      */
     public static <C extends ExpressionFunctionContext> ExpressionFunction<Object, C> ifFunction() {
         return ObjectExpressionFunctionIf.instance();
+    }
+
+    /**
+     * {@see ObjectExpressionFunctionIfs}
+     */
+    public static <C extends ExpressionFunctionContext> ExpressionFunction<Object, C> ifs() {
+        return ObjectExpressionFunctionIfs.instance();
     }
 
     /**
