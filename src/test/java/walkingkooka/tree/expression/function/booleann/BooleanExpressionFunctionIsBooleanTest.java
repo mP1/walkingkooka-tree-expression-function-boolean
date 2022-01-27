@@ -43,7 +43,7 @@ public final class BooleanExpressionFunctionIsBooleanTest extends BooleanExpress
     @Test
     public void testNumberZeroParameterFalse() {
         this.isBooleanAndCheck(
-                ExpressionNumberKind.BIG_DECIMAL.create(0),
+                ExpressionNumberKind.BIG_DECIMAL.zero(),
                 false
         );
     }
