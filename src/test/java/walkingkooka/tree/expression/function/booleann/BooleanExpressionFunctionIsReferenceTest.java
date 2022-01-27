@@ -44,7 +44,7 @@ public final class BooleanExpressionFunctionIsReferenceTest extends BooleanExpre
     @Test
     public void testNumberZeroParameterFalse() {
         this.isReferenceAndCheck(
-                ExpressionNumberKind.BIG_DECIMAL.create(0),
+                ExpressionNumberKind.BIG_DECIMAL.zero(),
                 false
         );
     }
