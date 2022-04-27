@@ -57,6 +57,9 @@ final class ObjectExpressionFunctionSwitch<C extends ExpressionFunctionContext> 
         this.checkParameterCount(parameters);
 
         final Object test = TEST.getOrFail(parameters, 0);
+        final CharSequence testCharSequence = test instanceof CharSequence ?
+                (CharSequence) test :
+                null;
 
         final List<Object> keyValues = KEY_VALUES.getVariable(parameters, 1);
 
@@ -80,7 +83,11 @@ final class ObjectExpressionFunctionSwitch<C extends ExpressionFunctionContext> 
             final Object value = keyValues.get(i);
             i++;
 
-            if (Objects.equals(test, key)) {
+            if (
+                    (null != testCharSequence && key instanceof CharSequence) ?
+                            context.caseSensitivity().equals(testCharSequence, (CharSequence) key) :
+                            Objects.equals(test, key)
+            ) {
                 result = value;
                 break;
             }

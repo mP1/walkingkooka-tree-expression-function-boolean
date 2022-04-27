@@ -20,7 +20,9 @@ package walkingkooka.tree.expression.function.booleann;
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
+import walkingkooka.text.CaseSensitivity;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.function.FakeExpressionFunctionContext;
 
 import java.util.List;
 
@@ -126,7 +128,49 @@ public final class ObjectExpressionFunctionSwitchTest extends ObjectExpressionFu
         );
     }
 
+    @Test
+    public void testStringCompares() {
+        this.switchAndCheck(
+                "abc",
+                CaseSensitivity.SENSITIVE,
+                Lists.of("abc", 11, "abc2", 22, DEFAULT),
+                11
+        );
+    }
+
+    @Test
+    public void testStringComparesCaseInsensitive() {
+        this.switchAndCheck(
+                "abc",
+                CaseSensitivity.INSENSITIVE,
+                Lists.of("ABC", 11, "abc", 22, DEFAULT),
+                11
+        );
+    }
+
+    @Test
+    public void testStringComparesCaseInsensitive2() {
+        this.switchAndCheck(
+                22,
+                CaseSensitivity.INSENSITIVE,
+                Lists.of("ABC", 11, 22, 33, DEFAULT),
+                33
+        );
+    }
+
     private void switchAndCheck(final Object test,
+                                final List<Object> keyValues,
+                                final Object expected) {
+        this.switchAndCheck(
+                test,
+                CaseSensitivity.SENSITIVE,
+                keyValues,
+                expected
+        );
+    }
+
+    private void switchAndCheck(final Object test,
+                                final CaseSensitivity caseSensitivity,
                                 final List<Object> keyValues,
                                 final Object expected) {
         final List<Object> parameters = Lists.array();
@@ -134,8 +178,15 @@ public final class ObjectExpressionFunctionSwitchTest extends ObjectExpressionFu
         parameters.add(test);
         parameters.addAll(keyValues);
 
-        this.applyAndCheck2(
+        this.applyAndCheck(
                 parameters,
+                new FakeExpressionFunctionContext() {
+
+                    @Override
+                    public CaseSensitivity caseSensitivity() {
+                        return caseSensitivity;
+                    }
+                },
                 expected
         );
     }
