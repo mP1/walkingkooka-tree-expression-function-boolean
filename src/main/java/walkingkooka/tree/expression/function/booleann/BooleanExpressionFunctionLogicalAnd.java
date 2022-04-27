@@ -18,7 +18,6 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
 import java.util.List;
@@ -43,8 +42,6 @@ final class BooleanExpressionFunctionLogicalAnd<C extends ExpressionFunctionCont
     private BooleanExpressionFunctionLogicalAnd() {
         super("and");
     }
-
-    private final static FunctionExpressionName NAME = FunctionExpressionName.with("and");
 
     @Override
     public Boolean apply(final List<Object> parameters,
