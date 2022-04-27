@@ -51,13 +51,11 @@ final class BooleanExpressionFunctionLogicalAnd<C extends ExpressionFunctionCont
 
         boolean result = true;
 
-        int i = 0;
-        while (i < count) {
-            result = result & PARAMETER.getOrFail(parameters, i);
+        for (final Boolean value : PARAMETER.getVariable(parameters, 0)) {
+            result = result && value;
             if (!result) {
                 break;
             }
-            i++;
         }
 
         return result;

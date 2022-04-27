@@ -51,10 +51,8 @@ final class BooleanExpressionFunctionLogicalXor<C extends ExpressionFunctionCont
 
         boolean result = false;
 
-        int i = 0;
-        while (i < count) {
-            result = result ^ PARAMETER.getOrFail(parameters, i);
-            i++;
+        for (final Boolean value : PARAMETER.getVariable(parameters, 0)) {
+            result = result ^ value;
         }
 
         return result;

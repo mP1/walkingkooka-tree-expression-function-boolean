@@ -49,7 +49,7 @@ public final class BooleanExpressionFunctionLogicalAndTest extends BooleanExpres
     }
 
     @Test
-    public void testTrueFalse() {
+    public void testTrueFalseNonBoolean() {
         this.applyAndCheck2(
                 Lists.of(true, false, 99), // 99 never getted or cast so ignored
                 false
