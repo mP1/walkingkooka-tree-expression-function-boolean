@@ -51,11 +51,6 @@ public final class ObjectExpressionFunctionIfTest extends ObjectExpressionFuncti
     }
 
     @Test
-    public void testResolveReferencesFalse() {
-        this.resolveReferencesAndCheck(true);
-    }
-
-    @Test
     public void testToString() {
         this.toStringAndCheck(this.createBiFunction(), "if");
     }

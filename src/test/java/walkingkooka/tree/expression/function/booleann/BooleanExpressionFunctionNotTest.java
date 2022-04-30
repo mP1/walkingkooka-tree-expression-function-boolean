@@ -29,11 +29,6 @@ public final class BooleanExpressionFunctionNotTest extends BooleanExpressionFun
     }
 
     @Test
-    public void testResolveReferencesTrue() {
-        this.resolveReferencesAndCheck(true);
-    }
-
-    @Test
     public void testToString() {
         this.toStringAndCheck(this.createBiFunction(), "not");
     }

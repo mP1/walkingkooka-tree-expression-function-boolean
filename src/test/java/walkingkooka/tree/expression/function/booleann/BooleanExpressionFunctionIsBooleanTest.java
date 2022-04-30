@@ -72,11 +72,6 @@ public final class BooleanExpressionFunctionIsBooleanTest extends BooleanExpress
     }
 
     @Test
-    public void testResolveReferencesTrue() {
-        this.resolveReferencesAndCheck(true);
-    }
-
-    @Test
     public void testToString() {
         this.toStringAndCheck(this.createBiFunction(), "isBoolean");
     }

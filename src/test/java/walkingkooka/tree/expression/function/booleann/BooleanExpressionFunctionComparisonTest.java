@@ -40,11 +40,6 @@ public final class BooleanExpressionFunctionComparisonTest extends BooleanExpres
         assertThrows(IllegalArgumentException.class, () -> this.apply2("a1", 2, 3));
     }
 
-    @Test
-    public void testResolveReferencesFalse() {
-        this.resolveReferencesAndCheck(true);
-    }
-
     // EQ........................................................................................
 
     @Test

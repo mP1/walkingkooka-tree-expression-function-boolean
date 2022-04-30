@@ -29,11 +29,6 @@ public final class BooleanExpressionFunctionFalseTest extends BooleanExpressionF
     }
 
     @Test
-    public void testResolveReferencesTrue() {
-        this.resolveReferencesAndCheck(true);
-    }
-
-    @Test
     public void testToString() {
         this.toStringAndCheck(this.createBiFunction(), "false");
     }
