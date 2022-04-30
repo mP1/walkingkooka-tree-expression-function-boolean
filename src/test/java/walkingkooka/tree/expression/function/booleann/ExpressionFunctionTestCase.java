@@ -18,6 +18,7 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import org.junit.jupiter.api.Test;
+import walkingkooka.collect.set.Sets;
 import walkingkooka.reflect.ClassTesting2;
 import walkingkooka.reflect.JavaVisibility;
 import walkingkooka.reflect.TypeNameTesting;
@@ -27,7 +28,10 @@ import walkingkooka.tree.expression.FunctionExpressionName;
 import walkingkooka.tree.expression.function.ExpressionFunction;
 import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionContexts;
+import walkingkooka.tree.expression.function.ExpressionFunctionKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionTesting;
+
+import java.util.Set;
 
 public abstract class ExpressionFunctionTestCase<F extends ExpressionFunction<T, ExpressionFunctionContext>, T> implements ExpressionFunctionTesting<F, T, ExpressionFunctionContext>,
         ExpressionPurityTesting,
@@ -53,8 +57,18 @@ public abstract class ExpressionFunctionTestCase<F extends ExpressionFunction<T,
     }
 
     @Test
-    public final void testRequiresEvaluatedParameters() {
-        this.requiresEvaluatedParametersAndCheck(true);
+    public final void testKind() {
+        final Set<ExpressionFunctionKind> kinds = Sets.ordered();
+        kinds.add(ExpressionFunctionKind.REQUIRES_EVALUATED_PARAMETERS);
+
+        if (!(this instanceof BooleanExpressionFunctionIsReferenceTest)) {
+            kinds.add(ExpressionFunctionKind.RESOLVE_REFERENCES);
+        }
+
+        this.checkEquals(
+                kinds,
+                this.createBiFunction().kinds()
+        );
     }
 
     @Override
