@@ -55,7 +55,7 @@ abstract class ObjectExpressionFunction<C extends ExpressionFunctionContext> imp
     }
 
     private final Set<ExpressionFunctionKind> KINDS = EnumSet.of(
-            ExpressionFunctionKind.REQUIRES_EVALUATED_PARAMETERS,
+            ExpressionFunctionKind.EVALUATE_PARAMETERS,
             ExpressionFunctionKind.RESOLVE_REFERENCES
     );
 
