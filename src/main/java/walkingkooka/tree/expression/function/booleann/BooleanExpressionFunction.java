@@ -38,9 +38,11 @@ abstract class BooleanExpressionFunction<C extends ExpressionFunctionContext> im
 
         this.kinds = this instanceof BooleanExpressionFunctionIsReference ?
                 EnumSet.of(
+                        ExpressionFunctionKind.CONVERT_PARAMETERS,
                         ExpressionFunctionKind.EVALUATE_PARAMETERS
                 ) :
                 EnumSet.of(
+                        ExpressionFunctionKind.CONVERT_PARAMETERS,
                         ExpressionFunctionKind.EVALUATE_PARAMETERS,
                         ExpressionFunctionKind.RESOLVE_REFERENCES
                 );

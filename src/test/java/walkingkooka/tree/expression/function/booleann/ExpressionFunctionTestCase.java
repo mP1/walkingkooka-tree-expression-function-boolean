@@ -59,6 +59,7 @@ public abstract class ExpressionFunctionTestCase<F extends ExpressionFunction<T,
     @Test
     public final void testKind() {
         final Set<ExpressionFunctionKind> kinds = Sets.ordered();
+        kinds.add(ExpressionFunctionKind.CONVERT_PARAMETERS);
         kinds.add(ExpressionFunctionKind.EVALUATE_PARAMETERS);
 
         if (!(this instanceof BooleanExpressionFunctionIsReferenceTest)) {
