@@ -18,8 +18,8 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionReference;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
 import java.util.List;
@@ -27,12 +27,12 @@ import java.util.List;
 /**
  * A function that tests if the value given is a {@link ExpressionReference}
  */
-final class BooleanExpressionFunctionIsReference<C extends ExpressionFunctionContext> extends BooleanExpressionFunction<C> {
+final class BooleanExpressionFunctionIsReference<C extends ExpressionEvaluationContext> extends BooleanExpressionFunction<C> {
 
     /**
      * Instance getter.
      */
-    static <C extends ExpressionFunctionContext> BooleanExpressionFunctionIsReference<C> instance() {
+    static <C extends ExpressionEvaluationContext> BooleanExpressionFunctionIsReference<C> instance() {
         return Cast.to(INSTANCE);
     }
 

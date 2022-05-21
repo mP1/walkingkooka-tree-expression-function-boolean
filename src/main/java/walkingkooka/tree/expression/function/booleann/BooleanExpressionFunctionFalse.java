@@ -19,7 +19,7 @@ package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
 import java.util.List;
@@ -27,12 +27,12 @@ import java.util.List;
 /**
  * A function that always returns false
  */
-final class BooleanExpressionFunctionFalse<C extends ExpressionFunctionContext> extends BooleanExpressionFunction<C> {
+final class BooleanExpressionFunctionFalse<C extends ExpressionEvaluationContext> extends BooleanExpressionFunction<C> {
 
     /**
      * Instance getter.
      */
-    static <C extends ExpressionFunctionContext> BooleanExpressionFunctionFalse<C> instance() {
+    static <C extends ExpressionEvaluationContext> BooleanExpressionFunctionFalse<C> instance() {
         return Cast.to(INSTANCE);
     }
 

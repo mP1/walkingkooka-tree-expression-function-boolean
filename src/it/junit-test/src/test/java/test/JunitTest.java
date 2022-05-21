@@ -20,7 +20,7 @@ import com.google.j2cl.junit.apt.J2clTestInput;
 import org.junit.Assert;
 import org.junit.Test;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.function.ExpressionFunctionContexts;
+import walkingkooka.tree.expression.ExpressionEvaluationContexts;
 import walkingkooka.tree.expression.function.booleann.BooleanExpressionFunctions;
 
 @J2clTestInput(JunitTest.class)
@@ -31,7 +31,10 @@ public class JunitTest {
         Assert.assertEquals(
                 Boolean.TRUE,
                 BooleanExpressionFunctions.trueFunction()
-                        .apply(Lists.of(), ExpressionFunctionContexts.fake())
+                        .apply(
+                                Lists.of(),
+                                ExpressionEvaluationContexts.fake()
+                        )
         );
     }
 }

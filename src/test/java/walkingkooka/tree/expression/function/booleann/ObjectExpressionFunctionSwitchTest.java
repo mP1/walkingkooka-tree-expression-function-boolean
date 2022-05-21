@@ -21,14 +21,14 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.text.CaseSensitivity;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
-import walkingkooka.tree.expression.function.FakeExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
+import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public final class ObjectExpressionFunctionSwitchTest extends ObjectExpressionFunctionTestCase<ObjectExpressionFunctionSwitch<ExpressionFunctionContext>> {
+public final class ObjectExpressionFunctionSwitchTest extends ObjectExpressionFunctionTestCase<ObjectExpressionFunctionSwitch<ExpressionEvaluationContext>> {
 
     @Test
     public void testZeroParametersFails() {
@@ -180,7 +180,7 @@ public final class ObjectExpressionFunctionSwitchTest extends ObjectExpressionFu
 
         this.applyAndCheck(
                 parameters,
-                new FakeExpressionFunctionContext() {
+                new FakeExpressionEvaluationContext() {
 
                     @Override
                     public CaseSensitivity caseSensitivity() {
@@ -201,12 +201,12 @@ public final class ObjectExpressionFunctionSwitchTest extends ObjectExpressionFu
     }
 
     @Override
-    public ObjectExpressionFunctionSwitch<ExpressionFunctionContext> createBiFunction() {
+    public ObjectExpressionFunctionSwitch<ExpressionEvaluationContext> createBiFunction() {
         return ObjectExpressionFunctionSwitch.instance();
     }
 
     @Override
-    public Class<ObjectExpressionFunctionSwitch<ExpressionFunctionContext>> type() {
+    public Class<ObjectExpressionFunctionSwitch<ExpressionEvaluationContext>> type() {
         return Cast.to(ObjectExpressionFunctionSwitch.class);
     }
 }

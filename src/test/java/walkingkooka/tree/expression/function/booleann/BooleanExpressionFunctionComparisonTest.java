@@ -19,11 +19,11 @@ package walkingkooka.tree.expression.function.booleann;
 
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public final class BooleanExpressionFunctionComparisonTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionComparison<ExpressionFunctionContext>> {
+public final class BooleanExpressionFunctionComparisonTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionComparison<ExpressionEvaluationContext>> {
 
     @Test
     public void testZeroParametersFails() {
@@ -234,7 +234,7 @@ public final class BooleanExpressionFunctionComparisonTest extends BooleanExpres
 
     // helper........................................................................................
 
-    void applyAndCheck3(final BooleanExpressionFunctionComparison<ExpressionFunctionContext> function,
+    void applyAndCheck3(final BooleanExpressionFunctionComparison<ExpressionEvaluationContext> function,
                         final Object first,
                         final Object second,
                         final Boolean result) {
@@ -251,12 +251,12 @@ public final class BooleanExpressionFunctionComparisonTest extends BooleanExpres
     }
 
     @Override
-    public BooleanExpressionFunctionComparison<ExpressionFunctionContext> createBiFunction() {
+    public BooleanExpressionFunctionComparison<ExpressionEvaluationContext> createBiFunction() {
         return BooleanExpressionFunctionComparison.greaterThan();
     }
 
     @Override
-    public Class<BooleanExpressionFunctionComparison<ExpressionFunctionContext>> type() {
+    public Class<BooleanExpressionFunctionComparison<ExpressionEvaluationContext>> type() {
         return Cast.to(BooleanExpressionFunctionComparison.class);
     }
 }

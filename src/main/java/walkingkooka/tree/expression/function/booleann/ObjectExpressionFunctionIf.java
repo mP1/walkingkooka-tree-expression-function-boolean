@@ -18,7 +18,7 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
@@ -27,12 +27,12 @@ import java.util.List;
 /**
  * A simple if that uses the first parameter when true to select the 2nd parameter or when false selects the third parameter.
  */
-final class ObjectExpressionFunctionIf<C extends ExpressionFunctionContext> extends ObjectExpressionFunction<C> {
+final class ObjectExpressionFunctionIf<C extends ExpressionEvaluationContext> extends ObjectExpressionFunction<C> {
 
     /**
      * Instance getter.
      */
-    static <C extends ExpressionFunctionContext> ObjectExpressionFunctionIf<C> instance() {
+    static <C extends ExpressionEvaluationContext> ObjectExpressionFunctionIf<C> instance() {
         return Cast.to(INSTANCE);
     }
 

@@ -20,14 +20,14 @@ package walkingkooka.tree.expression.function.booleann;
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumberKind;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public final class ObjectExpressionFunctionChooseTest extends ObjectExpressionFunctionTestCase<ObjectExpressionFunctionChoose<ExpressionFunctionContext>> {
+public final class ObjectExpressionFunctionChooseTest extends ObjectExpressionFunctionTestCase<ObjectExpressionFunctionChoose<ExpressionEvaluationContext>> {
 
     @Test
     public void testZeroParametersFails() {
@@ -113,12 +113,12 @@ public final class ObjectExpressionFunctionChooseTest extends ObjectExpressionFu
     }
 
     @Override
-    public ObjectExpressionFunctionChoose<ExpressionFunctionContext> createBiFunction() {
+    public ObjectExpressionFunctionChoose<ExpressionEvaluationContext> createBiFunction() {
         return ObjectExpressionFunctionChoose.instance();
     }
 
     @Override
-    public Class<ObjectExpressionFunctionChoose<ExpressionFunctionContext>> type() {
+    public Class<ObjectExpressionFunctionChoose<ExpressionEvaluationContext>> type() {
         return Cast.to(ObjectExpressionFunctionChoose.class);
     }
 }
