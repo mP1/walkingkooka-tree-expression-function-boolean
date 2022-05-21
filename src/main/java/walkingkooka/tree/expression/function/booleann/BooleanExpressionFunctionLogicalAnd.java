@@ -18,16 +18,16 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 
 import java.util.List;
 
-final class BooleanExpressionFunctionLogicalAnd<C extends ExpressionFunctionContext> extends BooleanExpressionFunctionLogical<C> {
+final class BooleanExpressionFunctionLogicalAnd<C extends ExpressionEvaluationContext> extends BooleanExpressionFunctionLogical<C> {
 
     /**
      * Instance getter.
      */
-    static <C extends ExpressionFunctionContext> BooleanExpressionFunctionLogicalAnd<C> instance() {
+    static <C extends ExpressionEvaluationContext> BooleanExpressionFunctionLogicalAnd<C> instance() {
         return Cast.to(INSTANCE);
     }
 

@@ -18,7 +18,7 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
@@ -30,12 +30,12 @@ import java.util.List;
  * <br>
  * https://exceljet.net/excel-functions/excel-ifs-function
  */
-final class ObjectExpressionFunctionIfs<C extends ExpressionFunctionContext> extends ObjectExpressionFunction<C> {
+final class ObjectExpressionFunctionIfs<C extends ExpressionEvaluationContext> extends ObjectExpressionFunction<C> {
 
     /**
      * Instance getter.
      */
-    static <C extends ExpressionFunctionContext> ObjectExpressionFunctionIfs<C> instance() {
+    static <C extends ExpressionEvaluationContext> ObjectExpressionFunctionIfs<C> instance() {
         return Cast.to(INSTANCE);
     }
 

@@ -18,11 +18,11 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import org.junit.jupiter.api.Test;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public abstract class BooleanExpressionFunctionLogicalTestCase<F extends BooleanExpressionFunctionLogical<ExpressionFunctionContext>> extends BooleanExpressionFunctionTestCase<F> {
+public abstract class BooleanExpressionFunctionLogicalTestCase<F extends BooleanExpressionFunctionLogical<ExpressionEvaluationContext>> extends BooleanExpressionFunctionTestCase<F> {
 
     BooleanExpressionFunctionLogicalTestCase() {
         super();

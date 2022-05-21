@@ -19,8 +19,8 @@ package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.collect.list.Lists;
 import walkingkooka.reflect.PublicStaticHelper;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunction;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 
 import java.util.function.Consumer;
 
@@ -59,133 +59,133 @@ public final class BooleanExpressionFunctions implements PublicStaticHelper {
     /**
      * {@see BooleanExpressionFunctionLogicalAnd}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> and() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Boolean, C> and() {
         return BooleanExpressionFunctionLogicalAnd.instance();
     }
 
     /**
      * {@see BooleanExpressionFunctionTo}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> booleanFunction() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Boolean, C> booleanFunction() {
         return BooleanExpressionFunctionTo.instance();
     }
 
     /**
      * {@see ObjectExpressionFunctionChoose}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Object, C> choose() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Object, C> choose() {
         return ObjectExpressionFunctionChoose.instance();
     }
 
     /**
      * {@see BooleanExpressionFunctionComparison}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> equals() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Boolean, C> equals() {
         return BooleanExpressionFunctionComparison.equals();
     }
 
     /**
      * {@see BooleanExpressionFunctionFalse}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> falseFunction() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Boolean, C> falseFunction() {
         return BooleanExpressionFunctionFalse.instance();
     }
 
     /**
      * {@see BooleanExpressionFunctionComparison}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> greaterThan() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Boolean, C> greaterThan() {
         return BooleanExpressionFunctionComparison.greaterThan();
     }
 
     /**
      * {@see BooleanExpressionFunctionComparison}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> greaterThanEquals() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Boolean, C> greaterThanEquals() {
         return BooleanExpressionFunctionComparison.greaterThanEqual();
     }
 
     /**
      * {@see ObjectExpressionFunctionIf}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Object, C> ifFunction() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Object, C> ifFunction() {
         return ObjectExpressionFunctionIf.instance();
     }
 
     /**
      * {@see ObjectExpressionFunctionIfs}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Object, C> ifs() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Object, C> ifs() {
         return ObjectExpressionFunctionIfs.instance();
     }
 
     /**
      * {@see BooleanExpressionFunctionIsBoolean}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> isBoolean() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Boolean, C> isBoolean() {
         return BooleanExpressionFunctionIsBoolean.instance();
     }
 
     /**
      * {@see BooleanExpressionFunctionIsReference}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> isReference() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Boolean, C> isReference() {
         return BooleanExpressionFunctionIsReference.instance();
     }
 
     /**
      * {@see BooleanExpressionFunctionComparison}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> lessThan() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Boolean, C> lessThan() {
         return BooleanExpressionFunctionComparison.lessThan();
     }
 
     /**
      * {@see BooleanExpressionFunctionComparison}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> lessThanEquals() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Boolean, C> lessThanEquals() {
         return BooleanExpressionFunctionComparison.lessThanEqual();
     }
 
     /**
      * {@see BooleanExpressionFunctionNot}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> not() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Boolean, C> not() {
         return BooleanExpressionFunctionNot.instance();
     }
 
     /**
      * {@see BooleanExpressionFunctionComparison}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> notEquals() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Boolean, C> notEquals() {
         return BooleanExpressionFunctionComparison.notEquals();
     }
 
     /**
      * {@see BooleanExpressionFunctionLogicalOr}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> or() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Boolean, C> or() {
         return BooleanExpressionFunctionLogicalOr.instance();
     }
 
     /**
      * {@see ObjectExpressionFunctionSwitch}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Object, C> switchFunction() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Object, C> switchFunction() {
         return ObjectExpressionFunctionSwitch.instance();
     }
 
     /**
      * {@see BooleanExpressionFunctionTrue}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> trueFunction() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Boolean, C> trueFunction() {
         return BooleanExpressionFunctionTrue.instance();
     }
 
     /**
      * {@see BooleanExpressionFunctionLogicalXor}
      */
-    public static <C extends ExpressionFunctionContext> ExpressionFunction<Boolean, C> xor() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Boolean, C> xor() {
         return BooleanExpressionFunctionLogicalXor.instance();
     }
 

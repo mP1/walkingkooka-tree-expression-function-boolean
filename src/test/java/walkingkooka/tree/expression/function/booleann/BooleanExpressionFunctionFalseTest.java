@@ -19,9 +19,9 @@ package walkingkooka.tree.expression.function.booleann;
 
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 
-public final class BooleanExpressionFunctionFalseTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionFalse<ExpressionFunctionContext>> {
+public final class BooleanExpressionFunctionFalseTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionFalse<ExpressionEvaluationContext>> {
 
     @Test
     public void testExecuteFunction() {
@@ -34,12 +34,12 @@ public final class BooleanExpressionFunctionFalseTest extends BooleanExpressionF
     }
 
     @Override
-    public BooleanExpressionFunctionFalse<ExpressionFunctionContext> createBiFunction() {
+    public BooleanExpressionFunctionFalse<ExpressionEvaluationContext> createBiFunction() {
         return BooleanExpressionFunctionFalse.instance();
     }
 
     @Override
-    public Class<BooleanExpressionFunctionFalse<ExpressionFunctionContext>> type() {
+    public Class<BooleanExpressionFunctionFalse<ExpressionEvaluationContext>> type() {
         return Cast.to(BooleanExpressionFunctionFalse.class);
     }
 }

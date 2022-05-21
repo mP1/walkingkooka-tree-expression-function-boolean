@@ -17,7 +17,7 @@
 
 package walkingkooka.tree.expression.function.booleann;
 
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Base class for any of the supported logical functions such as AND, OR, XOR.
  */
-abstract class BooleanExpressionFunctionLogical<C extends ExpressionFunctionContext> extends BooleanExpressionFunction<C> {
+abstract class BooleanExpressionFunctionLogical<C extends ExpressionEvaluationContext> extends BooleanExpressionFunction<C> {
 
     BooleanExpressionFunctionLogical(final String name) {
         super(name);

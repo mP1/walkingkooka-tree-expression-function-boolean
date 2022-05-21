@@ -18,7 +18,7 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
 import java.util.List;
@@ -26,12 +26,12 @@ import java.util.List;
 /**
  * A function that inverts the a boolean value.
  */
-final class BooleanExpressionFunctionNot<C extends ExpressionFunctionContext> extends BooleanExpressionFunction<C> {
+final class BooleanExpressionFunctionNot<C extends ExpressionEvaluationContext> extends BooleanExpressionFunction<C> {
 
     /**
      * Instance getter.
      */
-    static <C extends ExpressionFunctionContext> BooleanExpressionFunctionNot<C> instance() {
+    static <C extends ExpressionEvaluationContext> BooleanExpressionFunctionNot<C> instance() {
         return Cast.to(INSTANCE);
     }
 

@@ -19,18 +19,18 @@ package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
 import walkingkooka.Either;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
-import walkingkooka.tree.expression.function.FakeExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
+import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
-public abstract class BooleanExpressionFunctionTestCase<F extends BooleanExpressionFunction<ExpressionFunctionContext>> extends ExpressionFunctionTestCase<F, Boolean> {
+public abstract class BooleanExpressionFunctionTestCase<F extends BooleanExpressionFunction<ExpressionEvaluationContext>> extends ExpressionFunctionTestCase<F, Boolean> {
 
     BooleanExpressionFunctionTestCase() {
         super();
     }
 
     @Override
-    public final ExpressionFunctionContext createContext() {
-        return new FakeExpressionFunctionContext() {
+    public final ExpressionEvaluationContext createContext() {
+        return new FakeExpressionEvaluationContext() {
             @Override
             public <T> Either<T, String> convert(final Object value, final Class<T> target) {
                 if (value instanceof Boolean && Boolean.class == target) {
@@ -40,7 +40,7 @@ public abstract class BooleanExpressionFunctionTestCase<F extends BooleanExpress
                             )
                     );
                 }
-                if(value instanceof String && Boolean.class == target) {
+                if (value instanceof String && Boolean.class == target) {
                     return Cast.to(
                             Either.left(
                                     Boolean.parseBoolean((String) value)

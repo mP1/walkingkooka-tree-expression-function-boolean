@@ -18,7 +18,7 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
 import java.util.List;
@@ -26,12 +26,12 @@ import java.util.List;
 /**
  * A function that tests if the value given is a boolean.
  */
-final class BooleanExpressionFunctionIsBoolean<C extends ExpressionFunctionContext> extends BooleanExpressionFunction<C> {
+final class BooleanExpressionFunctionIsBoolean<C extends ExpressionEvaluationContext> extends BooleanExpressionFunction<C> {
 
     /**
      * Instance getter.
      */
-    static <C extends ExpressionFunctionContext> BooleanExpressionFunctionIsBoolean<C> instance() {
+    static <C extends ExpressionEvaluationContext> BooleanExpressionFunctionIsBoolean<C> instance() {
         return Cast.to(INSTANCE);
     }
 

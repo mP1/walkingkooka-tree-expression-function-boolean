@@ -18,8 +18,8 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumber;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
@@ -30,12 +30,12 @@ import java.util.List;
  * <br>
  * https://exceljet.net/excel-functions/excel-choose-function
  */
-final class ObjectExpressionFunctionChoose<C extends ExpressionFunctionContext> extends ObjectExpressionFunction<C> {
+final class ObjectExpressionFunctionChoose<C extends ExpressionEvaluationContext> extends ObjectExpressionFunction<C> {
 
     /**
      * Instance getter.
      */
-    static <C extends ExpressionFunctionContext> ObjectExpressionFunctionChoose<C> instance() {
+    static <C extends ExpressionEvaluationContext> ObjectExpressionFunctionChoose<C> instance() {
         return Cast.to(INSTANCE);
     }
 

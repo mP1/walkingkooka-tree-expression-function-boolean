@@ -18,7 +18,7 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
@@ -30,12 +30,12 @@ import java.util.Objects;
  * <br>
  * https://exceljet.net/excel-functions/excel-switch-function
  */
-final class ObjectExpressionFunctionSwitch<C extends ExpressionFunctionContext> extends ObjectExpressionFunction<C> {
+final class ObjectExpressionFunctionSwitch<C extends ExpressionEvaluationContext> extends ObjectExpressionFunction<C> {
 
     /**
      * Instance getter.
      */
-    static <C extends ExpressionFunctionContext> ObjectExpressionFunctionSwitch<C> instance() {
+    static <C extends ExpressionEvaluationContext> ObjectExpressionFunctionSwitch<C> instance() {
         return Cast.to(INSTANCE);
     }
 

@@ -19,11 +19,11 @@ package walkingkooka.tree.expression.function.booleann;
 
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public final class BooleanExpressionFunctionToTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionTo<ExpressionFunctionContext>> {
+public final class BooleanExpressionFunctionToTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionTo<ExpressionEvaluationContext>> {
 
     @Test
     public void testZeroParametersFails() {
@@ -66,12 +66,12 @@ public final class BooleanExpressionFunctionToTest extends BooleanExpressionFunc
     }
 
     @Override
-    public BooleanExpressionFunctionTo<ExpressionFunctionContext> createBiFunction() {
+    public BooleanExpressionFunctionTo<ExpressionEvaluationContext> createBiFunction() {
         return BooleanExpressionFunctionTo.instance();
     }
 
     @Override
-    public Class<BooleanExpressionFunctionTo<ExpressionFunctionContext>> type() {
+    public Class<BooleanExpressionFunctionTo<ExpressionEvaluationContext>> type() {
         return Cast.to(BooleanExpressionFunctionTo.class);
     }
 }

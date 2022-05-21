@@ -17,9 +17,9 @@
 
 package walkingkooka.tree.expression.function.booleann;
 
-import walkingkooka.tree.expression.function.ExpressionFunctionContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 
-public abstract class ObjectExpressionFunctionTestCase<F extends ObjectExpressionFunction<ExpressionFunctionContext>> extends ExpressionFunctionTestCase<F, Object> {
+public abstract class ObjectExpressionFunctionTestCase<F extends ObjectExpressionFunction<ExpressionEvaluationContext>> extends ExpressionFunctionTestCase<F, Object> {
 
     ObjectExpressionFunctionTestCase() {
         super();
