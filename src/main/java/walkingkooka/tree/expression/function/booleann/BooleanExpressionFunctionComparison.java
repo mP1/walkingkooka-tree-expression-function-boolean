@@ -21,6 +21,7 @@ import walkingkooka.Cast;
 import walkingkooka.compare.ComparisonRelation;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
+import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
 import java.util.List;
@@ -96,10 +97,12 @@ final class BooleanExpressionFunctionComparison<C extends ExpressionEvaluationCo
     }
 
     private final static ExpressionFunctionParameter<Comparable> FIRST = ExpressionFunctionParameterName.with("first")
-            .required(Comparable.class);
+            .required(Comparable.class)
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
 
     private final static ExpressionFunctionParameter<Comparable> SECOND = ExpressionFunctionParameterName.with("second")
-            .required(Comparable.class);
+            .required(Comparable.class)
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(FIRST, SECOND);
 }

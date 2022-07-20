@@ -18,9 +18,11 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
+import walkingkooka.collect.set.Sets;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionReference;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
+import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 
 import java.util.List;
 
@@ -53,13 +55,17 @@ final class BooleanExpressionFunctionIsReference<C extends ExpressionEvaluationC
                          final C context) {
         this.checkParameterCount(parameters);
 
-        return ExpressionFunctionParameter.VALUE.getOrFail(parameters, 0) instanceof ExpressionReference;
+        return VALUE.getOrFail(parameters, 0) instanceof ExpressionReference;
     }
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters(final int count) {
         return PARAMETERS;
     }
+
+    private final static ExpressionFunctionParameter<?> VALUE = ExpressionFunctionParameter.VALUE.setKinds(
+            Sets.of(ExpressionFunctionParameterKind.CONVERT)
+    );
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             ExpressionFunctionParameter.VALUE
