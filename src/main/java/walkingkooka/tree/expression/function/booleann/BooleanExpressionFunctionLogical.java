@@ -19,6 +19,7 @@ package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
+import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
 import java.util.List;
@@ -38,7 +39,8 @@ abstract class BooleanExpressionFunctionLogical<C extends ExpressionEvaluationCo
     }
 
     final static ExpressionFunctionParameter<Boolean> PARAMETER = ExpressionFunctionParameterName.with("parameter")
-            .variable(Boolean.class);
+            .variable(Boolean.class)
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             PARAMETER

@@ -20,6 +20,7 @@ package walkingkooka.tree.expression.function.booleann;
 import walkingkooka.Cast;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
+import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
 import java.util.List;
@@ -103,10 +104,12 @@ final class ObjectExpressionFunctionSwitch<C extends ExpressionEvaluationContext
     }
 
     private final static ExpressionFunctionParameter<Object> TEST = ExpressionFunctionParameterName.with("test")
-            .required(Object.class);
+            .required(Object.class)
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
 
     private final static ExpressionFunctionParameter<Object> KEY_VALUES = ExpressionFunctionParameterName.with("key-values")
-            .variable(Object.class);
+            .variable(Object.class)
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             TEST,
