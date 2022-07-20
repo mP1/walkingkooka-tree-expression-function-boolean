@@ -20,6 +20,7 @@ package walkingkooka.tree.expression.function.booleann;
 import walkingkooka.Cast;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
+import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 
 import java.util.List;
 
@@ -52,8 +53,11 @@ final class BooleanExpressionFunctionIsBoolean<C extends ExpressionEvaluationCon
                          final C context) {
         this.checkParameterCount(parameters);
 
-        return ExpressionFunctionParameter.VALUE.getOrFail(parameters, 0) instanceof Boolean;
+        return VALUE.getOrFail(parameters, 0) instanceof Boolean;
     }
+
+    private final static ExpressionFunctionParameter<Object> VALUE = ExpressionFunctionParameter.VALUE
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_RESOLVE_REFERENCES);
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters(final int count) {
@@ -61,6 +65,6 @@ final class BooleanExpressionFunctionIsBoolean<C extends ExpressionEvaluationCon
     }
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
-            ExpressionFunctionParameter.VALUE
+            VALUE
     );
 }

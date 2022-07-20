@@ -64,7 +64,8 @@ final class ObjectExpressionFunctionIf<C extends ExpressionEvaluationContext> ex
         return PARAMETERS;
     }
 
-    private final static ExpressionFunctionParameter<Boolean> BOOLEAN = ExpressionFunctionParameter.BOOLEAN;
+    private final static ExpressionFunctionParameter<Boolean> BOOLEAN = ExpressionFunctionParameter.BOOLEAN
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_RESOLVE_REFERENCES);
 
     private final static ExpressionFunctionParameter<Object> TRUE = ExpressionFunctionParameterName.with("true-value")
             .required(Object.class)
