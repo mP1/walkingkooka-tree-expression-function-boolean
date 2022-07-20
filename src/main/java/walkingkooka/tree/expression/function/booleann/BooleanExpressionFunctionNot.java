@@ -62,7 +62,7 @@ final class BooleanExpressionFunctionNot<C extends ExpressionEvaluationContext> 
     }
 
     private final static ExpressionFunctionParameter<Boolean> PARAMETER = ExpressionFunctionParameter.BOOLEAN
-            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_RESOLVE_REFERENCES);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             PARAMETER

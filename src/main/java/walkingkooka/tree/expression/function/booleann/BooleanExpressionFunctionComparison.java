@@ -98,11 +98,11 @@ final class BooleanExpressionFunctionComparison<C extends ExpressionEvaluationCo
 
     private final static ExpressionFunctionParameter<Comparable> FIRST = ExpressionFunctionParameterName.with("first")
             .required(Comparable.class)
-            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_RESOLVE_REFERENCES);
 
     private final static ExpressionFunctionParameter<Comparable> SECOND = ExpressionFunctionParameterName.with("second")
             .required(Comparable.class)
-            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_RESOLVE_REFERENCES);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(FIRST, SECOND);
 }

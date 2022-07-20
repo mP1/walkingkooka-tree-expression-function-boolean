@@ -40,7 +40,7 @@ abstract class BooleanExpressionFunctionLogical<C extends ExpressionEvaluationCo
 
     final static ExpressionFunctionParameter<Boolean> PARAMETER = ExpressionFunctionParameterName.with("parameter")
             .variable(Boolean.class)
-            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_RESOLVE_REFERENCES);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             PARAMETER

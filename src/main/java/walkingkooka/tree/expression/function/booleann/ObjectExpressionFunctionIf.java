@@ -68,11 +68,11 @@ final class ObjectExpressionFunctionIf<C extends ExpressionEvaluationContext> ex
 
     private final static ExpressionFunctionParameter<Object> TRUE = ExpressionFunctionParameterName.with("true-value")
             .required(Object.class)
-            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_RESOLVE_REFERENCES);
 
     private final static ExpressionFunctionParameter<Object> FALSE = ExpressionFunctionParameterName.with("false-value")
             .required(Object.class)
-            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_FLATTEN_RESOLVE_REFERENCES);
+            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_RESOLVE_REFERENCES);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             BOOLEAN,
