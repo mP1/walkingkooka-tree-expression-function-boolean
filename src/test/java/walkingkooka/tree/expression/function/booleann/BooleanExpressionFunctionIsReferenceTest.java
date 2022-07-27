@@ -84,6 +84,11 @@ public final class BooleanExpressionFunctionIsReferenceTest extends BooleanExpre
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 1;
+    }
+
+    @Override
     public Class<BooleanExpressionFunctionIsReference<ExpressionEvaluationContext>> type() {
         return Cast.to(BooleanExpressionFunctionIsReference.class);
     }

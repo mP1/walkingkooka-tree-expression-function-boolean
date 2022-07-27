@@ -256,6 +256,11 @@ public final class BooleanExpressionFunctionComparisonTest extends BooleanExpres
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 2;
+    }
+
+    @Override
     public Class<BooleanExpressionFunctionComparison<ExpressionEvaluationContext>> type() {
         return Cast.to(BooleanExpressionFunctionComparison.class);
     }

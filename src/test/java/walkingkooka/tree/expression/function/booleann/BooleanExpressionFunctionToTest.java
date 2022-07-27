@@ -71,6 +71,11 @@ public final class BooleanExpressionFunctionToTest extends BooleanExpressionFunc
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 1;
+    }
+
+    @Override
     public Class<BooleanExpressionFunctionTo<ExpressionEvaluationContext>> type() {
         return Cast.to(BooleanExpressionFunctionTo.class);
     }

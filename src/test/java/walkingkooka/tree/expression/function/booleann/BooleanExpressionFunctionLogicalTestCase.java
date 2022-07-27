@@ -37,4 +37,9 @@ public abstract class BooleanExpressionFunctionLogicalTestCase<F extends Boolean
                 }
         );
     }
+
+    @Override
+    public final int minimumParameterCount() {
+        return 1;
+    }
 }

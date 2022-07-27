@@ -118,6 +118,11 @@ public final class ObjectExpressionFunctionChooseTest extends ObjectExpressionFu
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 1;
+    }
+
+    @Override
     public Class<ObjectExpressionFunctionChoose<ExpressionEvaluationContext>> type() {
         return Cast.to(ObjectExpressionFunctionChoose.class);
     }
