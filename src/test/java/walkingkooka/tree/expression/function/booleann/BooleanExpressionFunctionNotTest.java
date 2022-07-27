@@ -39,6 +39,11 @@ public final class BooleanExpressionFunctionNotTest extends BooleanExpressionFun
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 1;
+    }
+
+    @Override
     public Class<BooleanExpressionFunctionNot<ExpressionEvaluationContext>> type() {
         return Cast.to(BooleanExpressionFunctionNot.class);
     }

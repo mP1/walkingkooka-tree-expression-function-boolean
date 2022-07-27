@@ -97,6 +97,11 @@ public final class ObjectExpressionFunctionIfsTest extends ObjectExpressionFunct
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 3;
+    }
+
+    @Override
     public Class<ObjectExpressionFunctionIfs<ExpressionEvaluationContext>> type() {
         return Cast.to(ObjectExpressionFunctionIfs.class);
     }

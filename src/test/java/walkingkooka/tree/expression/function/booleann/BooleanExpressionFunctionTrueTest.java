@@ -39,6 +39,11 @@ public final class BooleanExpressionFunctionTrueTest extends BooleanExpressionFu
     }
 
     @Override
+    public int minimumParameterCount() {
+        return 1;
+    }
+
+    @Override
     public Class<BooleanExpressionFunctionTrue<ExpressionEvaluationContext>> type() {
         return Cast.to(BooleanExpressionFunctionTrue.class);
     }
