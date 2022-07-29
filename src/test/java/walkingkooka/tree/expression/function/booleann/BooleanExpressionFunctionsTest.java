@@ -35,15 +35,26 @@ public final class BooleanExpressionFunctionsTest implements PublicStaticHelperT
     @Test
     public void testVisit() {
         final Set<FunctionExpressionName> names = Sets.sorted();
-        BooleanExpressionFunctions.visit((e) -> names.add(e.name()));
 
-        this.checkEquals(Arrays.stream(BooleanExpressionFunctions.class.getDeclaredMethods())
+        BooleanExpressionFunctions.visit((e) -> names.add(
+                e.name().get()
+        ));
+
+        this.checkEquals(
+                Arrays.stream(BooleanExpressionFunctions.class.getDeclaredMethods())
                         .filter(m -> m.getReturnType() == ExpressionFunction.class)
                         .map(Method::getName)
                         .collect(Collectors.toCollection(Sets::sorted))
                         .size(),
                 names.size());
-        this.checkEquals(true, names.contains(BooleanExpressionFunctions.trueFunction().name()));
+        this.checkEquals(
+                true,
+                names.contains(
+                        BooleanExpressionFunctions.trueFunction()
+                                .name()
+                                .get()
+                )
+        );
     }
 
     @Test
