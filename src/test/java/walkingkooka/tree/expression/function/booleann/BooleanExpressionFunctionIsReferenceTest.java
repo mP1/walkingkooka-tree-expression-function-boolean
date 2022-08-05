@@ -21,7 +21,7 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionNumberKind;
-import walkingkooka.tree.expression.ExpressionReference;
+import walkingkooka.tree.expression.FakeExpressionReference;
 
 public final class BooleanExpressionFunctionIsReferenceTest extends BooleanExpressionFunctionTestCase<BooleanExpressionFunctionIsReference<ExpressionEvaluationContext>> {
 
@@ -60,7 +60,7 @@ public final class BooleanExpressionFunctionIsReferenceTest extends BooleanExpre
     @Test
     public void testReferenceTrue() {
         this.isReferenceAndCheck(
-                new ExpressionReference() {
+                new FakeExpressionReference() {
                 },
                 true
         );
