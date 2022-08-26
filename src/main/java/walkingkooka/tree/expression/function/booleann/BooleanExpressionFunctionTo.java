@@ -68,7 +68,7 @@ final class BooleanExpressionFunctionTo<C extends ExpressionEvaluationContext> e
 
     private final static ExpressionFunctionParameter<Object> PARAMETER = ExpressionFunctionParameterName.with("parameter")
             .required(Object.class)
-            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_RESOLVE_REFERENCES);
+            .setKinds(ExpressionFunctionParameterKind.EVALUATE_RESOLVE_REFERENCES);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = Lists.of(PARAMETER);
 }
