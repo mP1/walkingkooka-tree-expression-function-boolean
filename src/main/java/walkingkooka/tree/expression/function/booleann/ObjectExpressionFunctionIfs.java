@@ -90,7 +90,7 @@ final class ObjectExpressionFunctionIfs<C extends ExpressionEvaluationContext> e
 
     private final static ExpressionFunctionParameter<Object> TEST_VALUE_PAIRS = ExpressionFunctionParameterName.with("test-value-pairs")
             .variable(Object.class)
-            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_RESOLVE_REFERENCES);
+            .setKinds(ExpressionFunctionParameterKind.EVALUATE_RESOLVE_REFERENCES);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             TEST_VALUE_PAIRS

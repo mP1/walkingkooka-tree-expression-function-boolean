@@ -74,7 +74,7 @@ final class ObjectExpressionFunctionChoose<C extends ExpressionEvaluationContext
 
     private final static ExpressionFunctionParameter<Object> VALUES = ExpressionFunctionParameterName.with("values")
             .variable(Object.class)
-            .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE_RESOLVE_REFERENCES);
+            .setKinds(ExpressionFunctionParameterKind.EVALUATE_RESOLVE_REFERENCES);
 
     private final static List<ExpressionFunctionParameter<?>> PARAMETERS = ExpressionFunctionParameter.list(
             INDEX,
