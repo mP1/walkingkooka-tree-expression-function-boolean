@@ -18,7 +18,7 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
-import walkingkooka.compare.ComparisonRelation;
+import walkingkooka.compare.CompareResult;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
@@ -36,42 +36,60 @@ final class BooleanExpressionFunctionComparison<C extends ExpressionEvaluationCo
         return Cast.to(EQ);
     }
 
-    private final static BooleanExpressionFunctionComparison<ExpressionEvaluationContext> EQ = new BooleanExpressionFunctionComparison<ExpressionEvaluationContext>("equals", ComparisonRelation.EQ);
+    private final static BooleanExpressionFunctionComparison<ExpressionEvaluationContext> EQ = new BooleanExpressionFunctionComparison<ExpressionEvaluationContext>(
+            "equals",
+            CompareResult.EQ
+    );
 
     static <C extends ExpressionEvaluationContext> BooleanExpressionFunctionComparison<C> notEquals() {
         return Cast.to(NE);
     }
 
-    private final static BooleanExpressionFunctionComparison<ExpressionEvaluationContext> NE = new BooleanExpressionFunctionComparison<ExpressionEvaluationContext>("not-equals", ComparisonRelation.NE);
+    private final static BooleanExpressionFunctionComparison<ExpressionEvaluationContext> NE = new BooleanExpressionFunctionComparison<ExpressionEvaluationContext>(
+            "not-equals",
+            CompareResult.NE
+    );
 
     static <C extends ExpressionEvaluationContext> BooleanExpressionFunctionComparison<C> greaterThan() {
         return Cast.to(GT);
     }
 
-    private final static BooleanExpressionFunctionComparison<ExpressionEvaluationContext> GT = new BooleanExpressionFunctionComparison<ExpressionEvaluationContext>("greater-than", ComparisonRelation.GT);
+    private final static BooleanExpressionFunctionComparison<ExpressionEvaluationContext> GT = new BooleanExpressionFunctionComparison<ExpressionEvaluationContext>(
+            "greater-than",
+            CompareResult.GT
+    );
 
     static <C extends ExpressionEvaluationContext> BooleanExpressionFunctionComparison<C> greaterThanEqual() {
         return Cast.to(GTE);
     }
 
-    private final static BooleanExpressionFunctionComparison<ExpressionEvaluationContext> GTE = new BooleanExpressionFunctionComparison<ExpressionEvaluationContext>("greater-than-equal", ComparisonRelation.GTE);
+    private final static BooleanExpressionFunctionComparison<ExpressionEvaluationContext> GTE = new BooleanExpressionFunctionComparison<ExpressionEvaluationContext>(
+            "greater-than-equal",
+            CompareResult.GTE
+    );
 
     static <C extends ExpressionEvaluationContext> BooleanExpressionFunctionComparison<C> lessThan() {
         return Cast.to(LT);
     }
 
-    private final static BooleanExpressionFunctionComparison<ExpressionEvaluationContext> LT = new BooleanExpressionFunctionComparison<ExpressionEvaluationContext>("less-than", ComparisonRelation.LT);
+    private final static BooleanExpressionFunctionComparison<ExpressionEvaluationContext> LT = new BooleanExpressionFunctionComparison<ExpressionEvaluationContext>(
+            "less-than",
+            CompareResult.LT
+    );
 
     static <C extends ExpressionEvaluationContext> BooleanExpressionFunctionComparison<C> lessThanEqual() {
         return Cast.to(LTE);
     }
 
-    private final static BooleanExpressionFunctionComparison<ExpressionEvaluationContext> LTE = new BooleanExpressionFunctionComparison<ExpressionEvaluationContext>("less-than-equal", ComparisonRelation.LTE);
+    private final static BooleanExpressionFunctionComparison<ExpressionEvaluationContext> LTE = new BooleanExpressionFunctionComparison<ExpressionEvaluationContext>(
+            "less-than-equal",
+            CompareResult.LTE
+    );
 
     /**
      * Private ctor
      */
-    private BooleanExpressionFunctionComparison(final String name, final ComparisonRelation relation) {
+    private BooleanExpressionFunctionComparison(final String name, final CompareResult relation) {
         super(name);
         this.relation = relation;
     }
@@ -89,7 +107,7 @@ final class BooleanExpressionFunctionComparison<C extends ExpressionEvaluationCo
         );
     }
 
-    private final ComparisonRelation relation;
+    private final CompareResult relation;
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters(final int count) {
