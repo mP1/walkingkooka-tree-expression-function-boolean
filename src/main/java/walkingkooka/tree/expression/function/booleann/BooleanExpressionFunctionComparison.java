@@ -46,7 +46,7 @@ final class BooleanExpressionFunctionComparison<C extends ExpressionEvaluationCo
     }
 
     private final static BooleanExpressionFunctionComparison<ExpressionEvaluationContext> NE = new BooleanExpressionFunctionComparison<ExpressionEvaluationContext>(
-            "not-equals",
+            "notEquals",
             CompareResult.NE
     );
 
@@ -55,7 +55,7 @@ final class BooleanExpressionFunctionComparison<C extends ExpressionEvaluationCo
     }
 
     private final static BooleanExpressionFunctionComparison<ExpressionEvaluationContext> GT = new BooleanExpressionFunctionComparison<ExpressionEvaluationContext>(
-            "greater-than",
+            "greaterThan",
             CompareResult.GT
     );
 
@@ -64,7 +64,7 @@ final class BooleanExpressionFunctionComparison<C extends ExpressionEvaluationCo
     }
 
     private final static BooleanExpressionFunctionComparison<ExpressionEvaluationContext> GTE = new BooleanExpressionFunctionComparison<ExpressionEvaluationContext>(
-            "greater-than-equal",
+            "greaterThanEqual",
             CompareResult.GTE
     );
 
@@ -73,7 +73,7 @@ final class BooleanExpressionFunctionComparison<C extends ExpressionEvaluationCo
     }
 
     private final static BooleanExpressionFunctionComparison<ExpressionEvaluationContext> LT = new BooleanExpressionFunctionComparison<ExpressionEvaluationContext>(
-            "less-than",
+            "lessThan",
             CompareResult.LT
     );
 
@@ -82,7 +82,7 @@ final class BooleanExpressionFunctionComparison<C extends ExpressionEvaluationCo
     }
 
     private final static BooleanExpressionFunctionComparison<ExpressionEvaluationContext> LTE = new BooleanExpressionFunctionComparison<ExpressionEvaluationContext>(
-            "less-than-equal",
+            "lessThanEqual",
             CompareResult.LTE
     );
 

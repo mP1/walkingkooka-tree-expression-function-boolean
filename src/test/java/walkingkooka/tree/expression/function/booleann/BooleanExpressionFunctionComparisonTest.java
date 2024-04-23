@@ -247,7 +247,7 @@ public final class BooleanExpressionFunctionComparisonTest extends BooleanExpres
 
     @Test
     public void testToString() {
-        this.toStringAndCheck(this.createBiFunction(), "greater-than");
+        this.toStringAndCheck(this.createBiFunction(), "greaterThan");
     }
 
     @Override
