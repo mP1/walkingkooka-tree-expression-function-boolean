@@ -17,12 +17,13 @@
 
 package walkingkooka.tree.expression.function.booleann;
 
-import walkingkooka.collect.list.Lists;
+import walkingkooka.collect.set.Sets;
+import walkingkooka.net.Url;
 import walkingkooka.reflect.PublicStaticHelper;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunction;
-
-import java.util.function.Consumer;
+import walkingkooka.tree.expression.function.provider.ExpressionFunctionProvider;
+import walkingkooka.tree.expression.function.provider.ExpressionFunctionProviders;
 
 /**
  * Collection of static factory methods for numerous {@link ExpressionFunction}.
@@ -30,30 +31,33 @@ import java.util.function.Consumer;
 public final class BooleanExpressionFunctions implements PublicStaticHelper {
 
     /**
-     * Visit all {@link ExpressionFunction functions}.
+     * An {@link ExpressionFunctionProvider} with all the functions in this project.
      */
-    public static void visit(final Consumer<ExpressionFunction<?, ?>> consumer) {
-        Lists.of(
-                and(),
-                booleanFunction(),
-                choose(),
-                equals(),
-                falseFunction(),
-                greaterThan(),
-                greaterThanEquals(),
-                ifFunction(),
-                ifs(),
-                isBoolean(),
-                isReference(),
-                lessThan(),
-                lessThanEquals(),
-                not(),
-                notEquals(),
-                or(),
-                switchFunction(),
-                trueFunction(),
-                xor()
-        ).forEach(consumer);
+    public static ExpressionFunctionProvider expressionFunctionProvider() {
+        return ExpressionFunctionProviders.basic(
+                Url.parseAbsolute("https://github.com/mP1/walkingkooka-tree-expression-function-boolean/"),
+                Sets.of(
+                        and(),
+                        booleanFunction(),
+                        choose(),
+                        equals(),
+                        falseFunction(),
+                        greaterThan(),
+                        greaterThanEquals(),
+                        ifFunction(),
+                        ifs(),
+                        isBoolean(),
+                        isReference(),
+                        lessThan(),
+                        lessThanEquals(),
+                        not(),
+                        notEquals(),
+                        or(),
+                        switchFunction(),
+                        trueFunction(),
+                        xor()
+                )
+        );
     }
 
     /**
