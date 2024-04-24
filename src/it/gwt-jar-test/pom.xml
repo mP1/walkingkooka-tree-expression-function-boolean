@@ -27,6 +27,12 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>walkingkooka</groupId>
+            <artifactId>walkingkooka-tree-expression-function-boolean-gwt</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <pluginRepositories>
