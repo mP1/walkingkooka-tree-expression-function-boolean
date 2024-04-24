@@ -20,6 +20,7 @@ package walkingkooka.tree.expression.function.booleann;
 import walkingkooka.collect.set.Sets;
 import walkingkooka.net.Url;
 import walkingkooka.reflect.PublicStaticHelper;
+import walkingkooka.text.CaseSensitivity;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunction;
 import walkingkooka.tree.expression.function.provider.ExpressionFunctionProvider;
@@ -33,9 +34,10 @@ public final class BooleanExpressionFunctions implements PublicStaticHelper {
     /**
      * An {@link ExpressionFunctionProvider} with all the functions in this project.
      */
-    public static ExpressionFunctionProvider expressionFunctionProvider() {
+    public static ExpressionFunctionProvider expressionFunctionProvider(final CaseSensitivity caseSensitivity) {
         return ExpressionFunctionProviders.basic(
                 Url.parseAbsolute("https://github.com/mP1/walkingkooka-tree-expression-function-boolean/"),
+                caseSensitivity,
                 Sets.of(
                         and(),
                         booleanFunction(),
