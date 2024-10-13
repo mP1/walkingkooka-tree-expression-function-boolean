@@ -18,8 +18,10 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
+import walkingkooka.collect.set.Sets;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
+import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 
 import java.util.List;
 
@@ -55,7 +57,9 @@ final class BooleanExpressionFunctionIsNull<C extends ExpressionEvaluationContex
         return null == VALUE.getOrFail(parameters, 0);
     }
 
-    private final static ExpressionFunctionParameter<Object> VALUE = ExpressionFunctionParameter.VALUE;
+    private final static ExpressionFunctionParameter<Object> VALUE = ExpressionFunctionParameter.VALUE.setKinds(
+            Sets.of(ExpressionFunctionParameterKind.EVALUATE)
+    );
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters(final int count) {
