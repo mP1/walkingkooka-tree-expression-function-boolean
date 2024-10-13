@@ -24,6 +24,7 @@ A collection of ExpressionFunction(s) that operate and return boolean results. M
 - ifs(boolean, value) //
   pairs [ifs](https://support.microsoft.com/en-us/office/ifs-function-36329a26-37b2-467c-972b-4a39bd951d45)
 - isBoolean(object)
+- isNull(object)
 - lessThan(Comparable)
 - lessThanEquals(Comparable)
 - not(boolean)
