@@ -86,7 +86,7 @@ final class ObjectExpressionFunctionSwitch<C extends ExpressionEvaluationContext
 
             if (
                     (null != testCharSequence && key instanceof CharSequence) ?
-                            context.caseSensitivity().equals(testCharSequence, (CharSequence) key) :
+                            context.stringEqualsCaseSensitivity().equals(testCharSequence, (CharSequence) key) :
                             Objects.equals(test, key)
             ) {
                 result = value;
