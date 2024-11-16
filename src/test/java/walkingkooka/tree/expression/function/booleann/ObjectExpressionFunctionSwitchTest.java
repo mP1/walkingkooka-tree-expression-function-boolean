@@ -170,7 +170,7 @@ public final class ObjectExpressionFunctionSwitchTest extends ObjectExpressionFu
     }
 
     private void switchAndCheck(final Object test,
-                                final CaseSensitivity caseSensitivity,
+                                final CaseSensitivity stringEqualsCaseSensitivity,
                                 final List<Object> keyValues,
                                 final Object expected) {
         final List<Object> parameters = Lists.array();
@@ -183,8 +183,8 @@ public final class ObjectExpressionFunctionSwitchTest extends ObjectExpressionFu
                 new FakeExpressionEvaluationContext() {
 
                     @Override
-                    public CaseSensitivity caseSensitivity() {
-                        return caseSensitivity;
+                    public CaseSensitivity stringEqualsCaseSensitivity() {
+                        return stringEqualsCaseSensitivity;
                     }
                 },
                 expected
