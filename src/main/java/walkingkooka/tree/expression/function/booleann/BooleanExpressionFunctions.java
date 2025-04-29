@@ -34,7 +34,7 @@ public final class BooleanExpressionFunctions implements PublicStaticHelper {
     /**
      * An {@link ExpressionFunctionProvider} with all the functions in this project.
      */
-    public static ExpressionFunctionProvider expressionFunctionProvider(final CaseSensitivity caseSensitivity) {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunctionProvider<C> expressionFunctionProvider(final CaseSensitivity caseSensitivity) {
         return ExpressionFunctionProviders.basic(
                 Url.parseAbsolute("https://github.com/mP1/walkingkooka-tree-expression-function-boolean/"),
                 caseSensitivity,
