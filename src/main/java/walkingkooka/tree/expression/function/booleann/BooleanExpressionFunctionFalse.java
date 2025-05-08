@@ -18,8 +18,8 @@
 package walkingkooka.tree.expression.function.booleann;
 
 import walkingkooka.Cast;
-import walkingkooka.collect.list.Lists;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
+import walkingkooka.tree.expression.function.ExpressionFunction;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
 import java.util.List;
@@ -57,6 +57,6 @@ final class BooleanExpressionFunctionFalse<C extends ExpressionEvaluationContext
 
     @Override
     public List<ExpressionFunctionParameter<?>> parameters(final int count) {
-        return Lists.empty();
+        return ExpressionFunction.NO_PARAMETERS;
     }
 }
