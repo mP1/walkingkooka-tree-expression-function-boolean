@@ -99,8 +99,8 @@ final class BooleanExpressionFunctionComparison<C extends ExpressionEvaluationCo
                          final C context) {
         this.checkParameterCount(parameters);
 
-        final Comparable<?> first = FIRST.getOrFail(parameters, 0);
-        final Comparable<?> second = SECOND.getOrFail(parameters, 1);
+        final Comparable<?> first = FIRST.getOrFail(parameters, 0, context);
+        final Comparable<?> second = SECOND.getOrFail(parameters, 1, context);
 
         return this.relation.predicate(
                 Cast.to(second)).test(Cast.to(first)

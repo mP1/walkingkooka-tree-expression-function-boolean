@@ -56,7 +56,7 @@ final class BooleanExpressionFunctionTo<C extends ExpressionEvaluationContext> e
         this.checkParameterCount(parameters);
 
         return context.convertOrFail(
-                PARAMETER.getOrFail(parameters, 0),
+                PARAMETER.getOrFail(parameters, 0, context),
                 Boolean.class
         );
     }
