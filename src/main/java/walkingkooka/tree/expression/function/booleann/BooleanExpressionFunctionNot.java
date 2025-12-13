@@ -53,7 +53,7 @@ final class BooleanExpressionFunctionNot<C extends ExpressionEvaluationContext> 
                          final C context) {
         this.checkParameterCount(parameters);
 
-        return !PARAMETER.getOrFail(parameters, 0, context);
+        return !PARAMETER.getOrFail(parameters, 0);
     }
 
     @Override

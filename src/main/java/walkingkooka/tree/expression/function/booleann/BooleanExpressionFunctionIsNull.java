@@ -54,7 +54,7 @@ final class BooleanExpressionFunctionIsNull<C extends ExpressionEvaluationContex
                          final C context) {
         this.checkParameterCount(parameters);
 
-        return null == VALUE.getOrFail(parameters, 0, context);
+        return null == VALUE.getOrFail(parameters, 0);
     }
 
     private final static ExpressionFunctionParameter<Object> VALUE = ExpressionFunctionParameter.VALUE.setKinds(
