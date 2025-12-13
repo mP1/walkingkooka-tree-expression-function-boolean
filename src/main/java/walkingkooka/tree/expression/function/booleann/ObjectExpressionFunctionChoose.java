@@ -57,7 +57,7 @@ final class ObjectExpressionFunctionChoose<C extends ExpressionEvaluationContext
                         final C context) {
         this.checkParameterCount(parameters);
 
-        final int index = INDEX.getOrFail(parameters, 0, context)
+        final int index = INDEX.getOrFail(parameters, 0)
                 .intValue();
 
         return VALUES.getVariable(parameters, 1).get(index - 1);

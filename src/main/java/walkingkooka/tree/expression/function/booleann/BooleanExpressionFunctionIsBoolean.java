@@ -53,8 +53,7 @@ final class BooleanExpressionFunctionIsBoolean<C extends ExpressionEvaluationCon
                          final C context) {
         this.checkParameterCount(parameters);
 
-        return VALUE.getOrFail(parameters, 0, context)
-                instanceof Boolean;
+        return VALUE.getOrFail(parameters, 0) instanceof Boolean;
     }
 
     private final static ExpressionFunctionParameter<Object> VALUE = ExpressionFunctionParameter.VALUE

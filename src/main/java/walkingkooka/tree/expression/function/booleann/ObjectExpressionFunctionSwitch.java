@@ -57,7 +57,7 @@ final class ObjectExpressionFunctionSwitch<C extends ExpressionEvaluationContext
                         final C context) {
         this.checkParameterCount(parameters);
 
-        final Object test = TEST.getOrFail(parameters, 0, context);
+        final Object test = TEST.getOrFail(parameters, 0);
         final CharSequence testCharSequence = test instanceof CharSequence ?
                 (CharSequence) test :
                 null;

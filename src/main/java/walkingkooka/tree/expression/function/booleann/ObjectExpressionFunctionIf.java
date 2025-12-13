@@ -54,9 +54,9 @@ final class ObjectExpressionFunctionIf<C extends ExpressionEvaluationContext> ex
                         final C context) {
         this.checkParameterCount(parameters);
 
-        return BOOLEAN.getOrFail(parameters, 0, context) ?
-                TRUE.getOrFail(parameters, 1, context) :
-                FALSE.getOrFail(parameters, 2, context);
+        return BOOLEAN.getOrFail(parameters, 0) ?
+                TRUE.getOrFail(parameters, 1) :
+                FALSE.getOrFail(parameters, 2);
     }
 
     @Override

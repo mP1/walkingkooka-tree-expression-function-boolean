@@ -55,8 +55,7 @@ final class BooleanExpressionFunctionIsReference<C extends ExpressionEvaluationC
                          final C context) {
         this.checkParameterCount(parameters);
 
-        return VALUE.getOrFail(parameters, 0, context)
-                instanceof ExpressionReference;
+        return VALUE.getOrFail(parameters, 0) instanceof ExpressionReference;
     }
 
     @Override
