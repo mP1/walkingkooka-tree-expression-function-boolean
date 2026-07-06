@@ -9,7 +9,7 @@
 # walkingkooka-tree-expression-function-boolean
 A collection of ExpressionFunction(s) that operate and return boolean results. Many of the functions follow Excel semantics.
 
-## Available functions
+## [Functions](https://github.com/mP1/walkingkooka-tree/blob/master/src/main/java/walkingkooka/tree/expression/function/ExpressionFunction.java)
 
 - [and](https://github.com/mP1/walkingkooka-tree-expression-function-boolean/blob/master/src/main/java/walkingkooka/tree/expression/function/booleann/BooleanExpressionFunctionLogicalAnd.java)
 - [boolean](https://github.com/mP1/walkingkooka-tree-expression-function-boolean/blob/master/src/main/java/walkingkooka/tree/expression/function/booleann/BooleanExpressionFunctionLogicalAnd.java)
