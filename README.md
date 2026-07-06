@@ -6,12 +6,8 @@
 ![](https://tokei.rs/b1/github/mP1/walkingkooka-tree-expression-function-boolean)
 [![J2CL compatible](https://img.shields.io/badge/J2CL-compatible-brightgreen.svg)](https://github.com/mP1/j2cl-central)
 
-
-
 # walkingkooka-tree-expression-function-boolean
 A collection of ExpressionFunction(s) that operate and return boolean results. Many of the functions follow Excel semantics.
-
-
 
 ## Available functions
 
@@ -35,7 +31,5 @@ A collection of ExpressionFunction(s) that operate and return boolean results. M
 - [switch](https://github.com/mP1/walkingkooka-tree-expression-function-boolean/blob/master/src/main/java/walkingkooka/tree/expression/function/booleann/ObjectExpressionFunctionSwitch.java)
 - [true](https://github.com/mP1/walkingkooka-tree-expression-function-boolean/blob/master/src/main/java/walkingkooka/tree/expression/function/booleann/BooleanExpressionFunctionTrue.java)
 - [xor](https://github.com/mP1/walkingkooka-tree-expression-function-boolean/blob/master/src/main/java/walkingkooka/tree/expression/function/booleann/BooleanExpressionFunctionLogicalXor.java)
-
-
 
 Many more functions are outstanding and remain TODO.
