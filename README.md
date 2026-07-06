@@ -15,6 +15,7 @@ A collection of ExpressionFunction(s) that operate and return boolean results. M
 
 ## Available functions
 
+- and
 - boolean(object)
 - choose(ExpressionNumber, Object...)
 - equals(object)
@@ -30,9 +31,10 @@ A collection of ExpressionFunction(s) that operate and return boolean results. M
 - lessThanEquals(Comparable)
 - not(boolean)
 - notEquals(object)
-- true()
+- or
 - switch(object, key/value*, default?)
-
+- true()
+- xor
 
 
 Many more functions are outstanding and remain TODO.
